@@ -9,12 +9,15 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen"
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import MessagesScreen from './app/screens/MessagesScreen'
 import ViewImageScreen from "./app/screens/ViewImageScreen";
+import AppTextInput from "./app/components/AppTextInput";
 
 
 export default function App() {
   return (
     
-    < ViewImageScreen/>
+    <Screen>
+      <AppTextInput placeholder="UserName" icon="email"/>
+    </Screen>
   )
   
 }
