@@ -23,9 +23,11 @@ import LoginScreen from "./app/screens/LoginScreen";
 //   const [category, setCategory] = useState(categories[0]);
 
   return (
-    <Screen>
+   
      
-      <LoginScreen/>
-    </Screen>
+        <LoginScreen/>
+     
+    
+    
   );
 }
