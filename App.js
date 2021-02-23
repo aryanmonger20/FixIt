@@ -2,7 +2,7 @@ import React,{useState} from "react";
 
 import Screen from "./app/components/Screen";
 import Icon from "./app/components/Icon";
-import ListItem from "./app/components/ListItem";
+import ListItem from "./app/components/lists/ListItem";
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen"
@@ -12,6 +12,7 @@ import ViewImageScreen from "./app/screens/ViewImageScreen";
 import AppTextInput from "./app/components/AppTextInput";
 import AppPicker from "./app/components/AppPicker";
 import LoginScreen from "./app/screens/LoginScreen";
+import ListingEditScreen from './app/screens/ListingEditScreen'
 
 // const categories = [
 //   { label: "Furniture", value: 1 },
@@ -25,7 +26,7 @@ import LoginScreen from "./app/screens/LoginScreen";
   return (
    
      
-        <LoginScreen/>
+        <ListingEditScreen/>
      
     
     
