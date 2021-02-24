@@ -43,7 +43,9 @@ function ListingEditScreen() {
           name="price"
           placeholder="Min-wage"
         />
-        <Picker items={categories} name="category" placeholder="Category" />
+        <Picker 
+        items={categories} name="category" placeholder="Category" PickerItemComponent 
+        />
         <FormField
           maxLength={255}
           multiline
