@@ -9,8 +9,8 @@ import ListingDetailsScreen from "./app/screens/ListingDetailsScreen"
 import WelcomeScreen from "./app/screens/WelcomeScreen";
 import MessagesScreen from './app/screens/MessagesScreen'
 import ViewImageScreen from "./app/screens/ViewImageScreen";
-import AppTextInput from "./app/components/AppTextInput";
-import AppPicker from "./app/components/AppPicker";
+import AppTextInput from "./app/components/TextInput";
+import AppPicker from "./app/components/Picker";
 import LoginScreen from "./app/screens/LoginScreen";
 import ListingEditScreen from './app/screens/ListingEditScreen'
 import RegisterScreen from './app/screens/RegisterScreen'
