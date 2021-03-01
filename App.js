@@ -19,33 +19,9 @@ import { Button, Image } from "react-native";
 import ImageInput from "./app/components/ImageInput";
 
 export default function App() {
-  const [imageUri, setImageUri] = useState();
 
-  const requestPermission = async () => {
-    const result = await Permissions.askAsync(
-      Permissions.CAMERA_ROLL,
-      Permissions.LOCATION
-    );
-    const { granted } = await ImagePicker.requestCameraPermissionsAsync();
-    if (!granted) alert("You need to enable permission to access");
-  };
-  useEffect(() => {
-    requestPermission();
-  }, []);
-  const selectImage = async () => {
-    try {
-      const result = await ImagePicker.launchImageLibraryAsync();
-      if (!result.cancelled) setImageUri(result.uri);
-    } catch (error) {
-      console.log("error reading image");
-    }
-  };
   return (
-    <Screen>
-      <Button title="Select Image" onPress={selectImage}></Button>
-      <Image source={{ uri: imageUri }} style={{ width: 200, height: 200 }} />
-      <ImageInput />
-    </Screen>
-    // <ListingEditScreen/>
+   
+   <ListingEditScreen/>
   );
 }
