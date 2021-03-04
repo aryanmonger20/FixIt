@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import * as ImagePicker from "expo-image-picker";
-import * as Permissions from "expo-permissions";
+
 import Screen from "./app/components/Screen";
-import Icon from "./app/components/Icon";
-import ListItem from "./app/components/lists/ListItem";
+
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
