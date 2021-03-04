@@ -8,15 +8,16 @@ import colors from "../config/colors";
 const listings = [
   {
     id: 1,
-    title: "Red jacket ",
+    title: "person1",
     price: 100,
     image: require("../assets/jacket.jpg"),
+    description:"good boy"
   },
   {
     id: 2,
-    title: "Couch",
+    title: "person 2",
     price: 1000,
-    image: require("../assets/couch.jpg"),
+    image: require("../assets/jacket.jpg"),
   },
 ];
 
@@ -31,6 +32,7 @@ function ListingsScreen(props) {
             title={item.title}
             subTitle={"$" + item.price}
             image={item.image}
+            description={item.description}
           />
         )}
       />

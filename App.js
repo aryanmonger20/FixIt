@@ -15,11 +15,17 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
 import { Button, Image } from "react-native";
 import ImageInput from "./app/components/ImageInput";
+import { NavigationContainer } from "@react-navigation/native";
+import AuthNavigatior from "./app/navigation/AuthNavigatior";
+import AppNavigator from "./app/navigation/AppNavigator";
+
 
 export default function App() {
 
   return (
    
-   <ListingEditScreen/>
+  <NavigationContainer>
+   <AppNavigator/>
+  </NavigationContainer>
   );
 }

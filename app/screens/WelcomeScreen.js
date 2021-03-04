@@ -1,8 +1,10 @@
 import React from "react";
 import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
-import AppButton from "../components/Button";
 
-function WelcomeScreen(props) {
+import Button from "../components/Button";
+import routes from "../navigation/routes";
+
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={3}
@@ -10,12 +12,19 @@ function WelcomeScreen(props) {
       source={require("../assets/back1.jpg")}
     >
       <View style={styles.logoContainer}>
-        {/* <Image style={styles.logo} source={require("../assets/logo-red.png")} /> */}
-        <Text style={styles.tagline}>Welcome there !!</Text>
+        <Image style={styles.logo} source={require("../assets/login.png")} />
+        <Text style={styles.tagline}>Find What You Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
-        <AppButton title="Login" />
-        <AppButton title="Register" color="secondary" />
+        <Button
+          title="Login"
+          onPress={() => navigation.navigate(routes.LOGIN)}
+        />
+        <Button
+          title="Register"
+          color="secondary"
+          onPress={() => navigation.navigate(routes.REGISTER)}
+        />
       </View>
     </ImageBackground>
   );
@@ -44,6 +53,7 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "600",
     paddingVertical: 20,
+    color:"dodgerblue"
   },
 });
 
