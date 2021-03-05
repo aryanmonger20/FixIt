@@ -1,22 +1,24 @@
 import React from "react";
 import { View, Image, StyleSheet } from "react-native";
-import AppText from "../components/Text";
 
-import ListItem from "../components/lists/ListItem";
 import colors from "../config/colors";
+import ListItem from "../components/lists/ListItem";
+import Text from "../components/Text";
 
-function ListingDetailsScreen(props) {
+function ListingDetailsScreen({ route }) {
+  const listing = route.params;
+
   return (
-    <View>
-      <Image style={styles.image} source={require("../assets/jacket.jpg")} />
+    <View screenOptions={{ headerShown: true}}>
+      <Image style={styles.image} source={listing.image} />
       <View style={styles.detailsContainer}>
-        <AppText style={styles.title}>Person 1</AppText>
-        <AppText style={styles.price}>$frrreeee</AppText>
+        <Text style={styles.title}>{listing.title}</Text>
+        <Text style={styles.price}>${listing.price}</Text>
         <View style={styles.userContainer}>
           <ListItem
             image={require("../assets/me.jpg")}
-            title="Aryan gupta"
-            subTitle="wtff"
+            title="Aryan Gupta"
+            subTitle="free"
           />
         </View>
       </View>
