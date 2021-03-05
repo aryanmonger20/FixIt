@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import * as ImagePicker from "expo-image-picker";
-import * as Permissions from "expo-permissions";
+
 import Screen from "./app/components/Screen";
-import Icon from "./app/components/Icon";
-import ListItem from "./app/components/lists/ListItem";
+
 import AccountScreen from "./app/screens/AccountScreen";
 import ListingsScreen from "./app/screens/ListingsScreen";
 import ListingDetailsScreen from "./app/screens/ListingDetailsScreen";
@@ -17,11 +15,17 @@ import ListingEditScreen from "./app/screens/ListingEditScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
 import { Button, Image } from "react-native";
 import ImageInput from "./app/components/ImageInput";
+import { NavigationContainer } from "@react-navigation/native";
+import AuthNavigatior from "./app/navigation/AuthNavigatior";
+import AppNavigator from "./app/navigation/AppNavigator";
+
 
 export default function App() {
 
   return (
    
-   <ListingEditScreen/>
+  <NavigationContainer>
+   <AppNavigator/>
+  </NavigationContainer>
   );
 }
