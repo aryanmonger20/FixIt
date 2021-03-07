@@ -16,7 +16,7 @@ import RegisterScreen from "./app/screens/RegisterScreen";
 import { Button, Image } from "react-native";
 import ImageInput from "./app/components/ImageInput";
 import { NavigationContainer } from "@react-navigation/native";
-import AuthNavigatior from "./app/navigation/AuthNavigatior";
+import AuthNavigator from "./app/navigation/AuthNavigator";
 import AppNavigator from "./app/navigation/AppNavigator";
 
 
