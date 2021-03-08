@@ -18,10 +18,10 @@ export default function App() {
     if (user) setUser(user);
   };
 
-  // if (!isReady)
-  //   return (
-  //     <AppLoading startAsync={restoreUser} onFinish={() => setIsReady(true)} />
-  //   );
+  if (!isReady)
+    return (
+      <AppLoading startAsync={restoreUser} onFinish={() => setIsReady(true)} onError={console.warn} />
+    );
 
   return (
     <AuthContext.Provider value={{ user, setUser }}>
