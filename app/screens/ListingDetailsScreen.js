@@ -24,13 +24,16 @@ function ListingDetailsScreen({ route }) {
     >
       <Image
         style={styles.image}
-        preview={{ uri: listing.images[0].thumbnailUrl }}
+       // preview={{ uri: listing.images[0].thumbnailUrl }}
         tint="light"
-        uri={listing.images[0].url}
+        uri={listing.images}
       />
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{listing.title}</Text>
+        <Text style={styles.title}>{listing.title} {" "}{"("}{listing.categoryId}{")"}</Text>
         <Text style={styles.price}>${listing.price}</Text>
+       
+        <Text style={styles.description}>{listing.description}</Text>
+
         <View style={styles.userContainer}>
           <ListItem
             image={require("../assets/me.jpg")}
@@ -61,6 +64,10 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     fontWeight: "500",
+  },
+  description:{
+    fontSize: 20,
+    fontWeight: "300",
   },
   userContainer: {
     marginVertical: 40,
