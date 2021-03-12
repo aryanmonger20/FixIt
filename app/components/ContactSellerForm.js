@@ -38,7 +38,7 @@ function ContactSellerForm({ listing }) {
         numberOfLines={3}
         placeholder="Message..."
       />
-      <SubmitButton title="Contact Seller" />
+      <SubmitButton title="Contact" />
     </Form>
   );
 }

@@ -13,7 +13,7 @@ export const addListing = (listing, onUploadProgress) => {
   data.append("categoryId", listing.category.label);
   data.append("description", listing.description);
   data.append("images", listing.image);
-  console.log(data)
+ // console.log(data)
   
   
   // listing.images.forEach((image, index) =>
