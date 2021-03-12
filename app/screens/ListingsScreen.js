@@ -29,12 +29,14 @@ function ListingsScreen({ navigation }) {
       <ActivityIndicator visible={getListingsApi.loading} />
       <FlatList
         data={getListingsApi.data}
+        
         keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
           <Card
             title={item.title}
             subTitle={"$" + item.price}
-            imageUrl={item.images[0].url}
+            category={item.categoryId}
+            imageUrl={item.images}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
