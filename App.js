@@ -10,8 +10,9 @@ import AuthContext from "./app/auth/context";
 import authStorage from "./app/auth/storage";
 import location from "./app/hooks/useLocation"
 import { navigationRef } from "./app/navigation/rootNavigation";
-
+import OnboardingScreen from "./app/screens/OnboardingScreen";
 export default function App() {
+  /*
   const [user, setUser] = useState();
   const [isReady, setIsReady] = useState(false);
 const uselocation=location();
@@ -23,13 +24,26 @@ const uselocation=location();
   if (!isReady)
     return (
       <AppLoading startAsync={restoreUser} onFinish={() => setIsReady(true)} onError={console.warn} />
-    );
+    );*/
     return (
-      <AuthContext.Provider value={{ user, setUser }}>
+      <NavigationContainer>
+      <AppStack.navigatior
+      headerMode ="none"
+      >
+        <AppStack.Screen name ="Onboarding" component ={OnboardingScreen}/>
+        <AppStack.Screen name ="Login" component ={LoginScreen}/>
+      </AppStack.navigatior>
+    </NavigationContainer>
+
+
+
+
+
+     /* <AuthContext.Provider value={{ user, setUser }}>
         <OfflineNotice />
         <NavigationContainer ref={navigationRef} theme={navigationTheme}>
           {user ? <AppNavigator /> : <AuthNavigator />}
         </NavigationContainer>
-      </AuthContext.Provider>
+      </AuthContext.Provider>*/
   );
 }
