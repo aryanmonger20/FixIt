@@ -60,19 +60,19 @@ const OnboardingScreen = ({navigation}) => {
           {
             backgroundColor: '#a6e4d0',
             image: <Image source={require('../assets/onboarding-img1.png')} />,
-            title: 'Connect to the World',
+            title: 'Find Your Needs',
             subtitle: 'A New Way To Connect With The World',
           },
           {
             backgroundColor: '#fdeb93',
-            image: <Image source={require('../assets/onboarding-img2.png')} />,
-            title: 'Share Your Favorites',
+            image: <Image source={require('../assets/onboarding-img1.png')} />,
+            title: 'Receive Your Work',
             subtitle: 'Share Your Thoughts With Similar Kind of People',
           },
           {
             backgroundColor: '#e9bcbe',
             image: <Image source={require('../assets/onboarding-img3.png')} />,
-            title: 'Become The Star',
+            title: 'We glad to serve you',
             subtitle: "Let The Spot Light Capture You",
           },
         ]}

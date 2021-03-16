@@ -39,6 +39,7 @@
     "react-native": "https://github.com/expo/react-native/archive/sdk-40.0.0.tar.gz",
     "react-native-expo-image-cache": "^4.1.0",
     "react-native-gesture-handler": "~1.8.0",
+    "react-native-onboarding-swiper": "^1.1.4",
     "react-native-progress": "^4.1.2",
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.9",
