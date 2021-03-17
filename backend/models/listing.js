@@ -20,8 +20,8 @@ const listingSchema = new mongoose.Schema({
       type : String,
       trim : true
   },
-    images:
-    {   type : String,
+    contact:
+    {   type : Number,
         
     },
     location: {

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
+import { StyleSheet ,Text} from "react-native";
 import * as Yup from "yup";
 
 import {
@@ -15,19 +15,79 @@ import listingsApi from "../api/listings";
 import useLocation from "../hooks/useLocation";
 import UploadScreen from "./UploadScreen";
 import users from "../api/users";
+import colors from "../config/colors";
+
+import "yup-phone";
+
+
+const phoneRegExp = /^((\\+[1-9]{1,4}[ \\-]*)|(\\([0-9]{2,3}\\)[ \\-]*)|([0-9]{2,4})[ \\-]*)*?[0-9]{3,4}?[ \\-]*[0-9]{3,4}?$/;
+
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
   price: Yup.number().required().min(1).max(10000).label("Price"),
   description: Yup.string().label("Description"),
   category: Yup.object().required().nullable().label("Category"),
-  images: Yup.array().min(1, "Please select at least one image."),
+  contact: Yup.string()
+  .phone("IN", true)
+  .required(),
 });
 
 const categories = [
-  { label: "Plumber", value: 1 },
-  { label: "Electrician", value: 2 },
-  { label: "Maid", value: 3 },
+  {
+    backgroundColor: "#fc5c65",
+    icon: "floor-lamp",
+    label: "Carpenter",
+    value: 1,
+  },
+  {
+    backgroundColor: "#fd9644",
+    icon: "car",
+    label: "Mechanic",
+    value: 2,
+  },
+  {
+    backgroundColor: "#fed330",
+    icon: "camera",
+    label: "Cameraman",
+    value: 3,
+  },
+  {
+    backgroundColor: "#26de81",
+    icon: "cards",
+    label: "Plumber",
+    value: 4,
+  },
+  {
+    backgroundColor: "#2bcbba",
+    icon: "shoe-heel",
+    label: "Maid",
+    value: 5,
+  },
+  {
+    backgroundColor: "#45aaf2",
+    icon: "basketball",
+    label: "Electrician",
+    value: 6,
+  },
+  {
+    backgroundColor: "#4b7bec",
+    icon: "Musician",
+    label: "Movies & Music",
+    value: 7,
+  },
+  {
+    backgroundColor: "#a55eea",
+    icon: "Tutor",
+    label: "Books",
+    value: 8,
+  },
+  {
+    backgroundColor: "#778ca3",
+    icon: "application",
+    label: "Other",
+    value: 9,
+  },
 ];
 function ListingEditScreen() {
   const location = useLocation();
@@ -58,6 +118,7 @@ function ListingEditScreen() {
         progress={progress}
         visible={uploadVisible}
       />
+      <Text style={styles.contact}>Sign Urself for Job</Text>
       <Form
         initialValues={{
           id:users.id,
@@ -65,13 +126,13 @@ function ListingEditScreen() {
           price: "",
           description: "",
           category: null,
-          images: [],
+          contact:"",
         }}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
-        <FormImagePicker name="images" />
-        <FormField maxLength={255} name="title" placeholder="Title" />
+        {/* <FormImagePicker name="images" /> */}
+        <FormField maxLength={255} name="title" placeholder="Name" />
         <FormField
           keyboardType="numeric"
           maxLength={8}
@@ -88,11 +149,19 @@ function ListingEditScreen() {
           width="50%"
         />
         <FormField
+        minLength={10}
+          maxLength={10}
+          keyboardType="numeric"
+          name="contact"
+          numberOfLines={1}
+          placeholder="Phone-Number"
+        />
+        <FormField
           maxLength={255}
           multiline
           name="description"
           numberOfLines={3}
-          placeholder="Description"
+          placeholder="About You (in less than 100 words)"
         />
         <SubmitButton title="Post" />
       </Form>
@@ -104,5 +173,15 @@ const styles = StyleSheet.create({
   container: {
     padding: 10,
   },
+  contact:{
+    padding:15,
+    fontSize:38,
+    color:colors.primary,
+    fontWeight:"600",
+    textShadowOffset:{width:10,height:10},
+   //fontFamily:"Roboto",
+    textShadowRadius:10
+
+  }
 });
 export default ListingEditScreen;

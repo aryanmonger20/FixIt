@@ -30,17 +30,17 @@ router.post("/", urlencodedParser,async (req, res) => {
     title: req.body._parts[1][1],
     price: req.body._parts[2][1],
     categoryId: req.body._parts[3][1],
-    location: req.body._parts[5][1],
+    location: req.body._parts[6][1],
     description:req.body._parts[4][1],
-    images:"",
-    location:req.body._parts[6]
+    contact:req.body._parts[5][1],
+    location:req.body._parts[6][1]
   });
 
   try {
  const a1 = await listings.save();
  // Listing.create(req.body);
-   res.json(a1);
-    console.log(a1);
+  res.json(a1);
+    console.log(req.body._parts[6][1]);
     
   } catch (err) {
     res.send("Error " + err);

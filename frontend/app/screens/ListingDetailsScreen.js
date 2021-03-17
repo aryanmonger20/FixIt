@@ -30,9 +30,12 @@ function ListingDetailsScreen({ route }) {
       />
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{listing.title} {" "}{"("}{listing.categoryId}{")"}</Text>
-        <Text style={styles.price}>${listing.price}</Text>
+        <Text style={styles.price}><Text style={styles.pri}>Minimum Wage :</Text>₹{listing.price}</Text>
        
-        <Text style={styles.description}>{listing.description}</Text>
+       
+        <Text style={styles.description}>{listing.contact}</Text>
+
+        <Text style={styles.description}><Text style={styles.pri}>About :</Text>{listing.description}</Text>
 
         
         <ContactSellerForm listing={listing} />
