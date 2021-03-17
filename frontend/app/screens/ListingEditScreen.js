@@ -14,6 +14,7 @@ import FormImagePicker from "../components/forms/FormImagePicker";
 import listingsApi from "../api/listings";
 import useLocation from "../hooks/useLocation";
 import UploadScreen from "./UploadScreen";
+import users from "../api/users";
 
 const validationSchema = Yup.object().shape({
   title: Yup.string().required().min(1).label("Title"),
@@ -59,6 +60,7 @@ function ListingEditScreen() {
       />
       <Form
         initialValues={{
+          id:users.id,
           title: "",
           price: "",
           description: "",

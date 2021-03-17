@@ -34,13 +34,7 @@ function ListingDetailsScreen({ route }) {
        
         <Text style={styles.description}>{listing.description}</Text>
 
-        <View style={styles.userContainer}>
-          <ListItem
-            image={require("../assets/me.jpg")}
-            title="Aryan"
-            subTitle="yoyo"
-          />
-        </View>
+        
         <ContactSellerForm listing={listing} />
       </View>
     </KeyboardAvoidingView>

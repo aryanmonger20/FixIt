@@ -1,12 +1,10 @@
 import React from "react";
-import { Component } from "react";
 import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
-import { createStackNavigator } from '@react-navigation/stack';
 
 import Button from "../components/Button";
 import routes from "../navigation/routes";
 
-const WelcomeScreen = ({ navigation }) => {
+function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
       blurRadius={3}
@@ -21,18 +19,17 @@ const WelcomeScreen = ({ navigation }) => {
         <Button
           title="Login"
           color="new"
-          onPress={() => navigation.navigate("LOGIN")}
+          onPress={() => navigation.navigate(routes.LOGIN)}
         />
         <Button
           title="Register"
           color="secondary"
-          onPress={() => navigation.navigate("REGISTER")}
+          onPress={() => navigation.navigate(routes.REGISTER)}
         />
       </View>
     </ImageBackground>
   );
 }
-
 
 const styles = StyleSheet.create({
   background: {

@@ -17,6 +17,7 @@ export default useNotifications = (notificationListener) => {
       if (!permission.granted) return;
 
       const token = await Notifications.getExpoPushTokenAsync();
+      console.log(token)
       expoPushTokensApi.register(token);
     } catch (error) {
       console.log("Error getting a push token", error);
