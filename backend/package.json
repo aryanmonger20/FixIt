@@ -1,5 +1,5 @@
 {
-  "name": "done-with-it-api",
+  "name": "fixitbackend",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -7,7 +7,7 @@
     "start": "node index.js"
   },
   "keywords": [],
-  "author": "Mosh Hamedani",
+  "author": "Aryan Gupta",
   "license": "ISC",
   "dependencies": {
     "apisauce": "^2.0.0",
