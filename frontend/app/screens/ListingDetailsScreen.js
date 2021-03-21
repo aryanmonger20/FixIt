@@ -7,16 +7,18 @@ import {
   Keyboard,
 } from "react-native";
 import { Image } from "react-native-expo-image-cache";
-
+import Button from "../components/Button"
 import colors from "../config/colors";
 import ContactSellerForm from "../components/ContactSellerForm";
 import ListItem from "../components/lists/ListItem";
 import Text from "../components/Text";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
+import {Linking} from 'react-native'
 
 function ListingDetailsScreen({ route }) {
   const listing = route.params;
-
+const OpenContact=()=>
+{Linking.openURL(`tel:${listing.contact}`)}
   return (
     <KeyboardAvoidingView
       behavior="position"
@@ -38,8 +40,19 @@ function ListingDetailsScreen({ route }) {
         <Text style={styles.description}><Text style={styles.pri}>About :</Text>{listing.description}</Text>
 
         
-        <ContactSellerForm listing={listing} />
+     
+        
       </View>
+      <View style={styles.detailsContainer}>
+      <Button title="Contact Now"
+      onPress={OpenContact}></Button>
+      </View>
+
+      <View style={styles.detailsContainer}>
+      <ContactSellerForm contact={listing.contact} />
+      </View>
+      
+      
     </KeyboardAvoidingView>
   );
 }

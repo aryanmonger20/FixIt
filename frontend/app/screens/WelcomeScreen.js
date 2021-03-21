@@ -12,7 +12,7 @@ function WelcomeScreen({ navigation }) {
       source={require("../assets/blue.jpeg")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo.jpeg")} />
+        <Image style={styles.logo} source={require("../assets/logo.png")} />
         <Text style={styles.tagline}>Find What You Need</Text>
       </View>
       <View style={styles.buttonsContainer}>

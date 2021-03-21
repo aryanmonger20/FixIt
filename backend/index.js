@@ -6,7 +6,7 @@ const cors =require("cors")
 
 
 const categories = require("./routes/categories");
-const listings = require("./route/listings");
+const listings = require("./routes/listings");
 const listing = require("./routes/listing");
 const users = require("./routes/users");
 const user = require("./routes/user");
@@ -59,22 +59,11 @@ mongoose.connect(
     console.log("MongoDB Connected");
   }
 );
-// client.connect(err => {
-//   const collection = client.db("test").collection("devices");
-//   // perform actions on the collection object
-//   client.close();
-// });
+
 
 app.use(express.json());
 
-// const listingsRouter = require("./route/listings");
-// app.use("/listings", listingsRouter);
 
-const usersRouter = require("./route/users");
-app.use("/users", usersRouter);
-
-const categorysRouter = require("./route/category");
-app.use("/categorys", categorysRouter);
 
 const port = process.env.PORT || config.get("port");
 app.listen(port, function () {

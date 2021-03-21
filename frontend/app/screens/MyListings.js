@@ -11,6 +11,7 @@ import routes from "../navigation/routes";
 import Screen from "../components/Screen";
 import AppText from "../components/Text";
 import useApi from "../hooks/useApi";
+import useAuth from "../auth/useAuth";
 import filter from 'lodash.filter';
 
 
@@ -18,6 +19,7 @@ import filter from 'lodash.filter';
 
 function ListingsScreen({ navigation }) {
 
+    const { user, logOut } = useAuth();
   const getListingsApi = useApi(listingsApi.getListings);
 
   const [search, setSearch] = useState('');
@@ -30,25 +32,23 @@ function ListingsScreen({ navigation }) {
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
         setMasterDataSource(responseJson);
-       // console.log(responseJson)
+        console.log(responseJson)
       })
       .catch((error) => {
         console.error(error);
       });
   }, []);
-
+  
+const text= user.id;
   const searchFilterFunction = (text) => {
-    // Check if searched text is not blank
+    
     if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource
-      // Update FilteredDataSource
+      
       const newData = masterDataSource.filter(function (item) {
-        const itemData = item.categoryId
+        const itemData = item.id
           ? item.categoryId.toUpperCase()
           : ''.toUpperCase();
-        const textData = text.toUpperCase();
-        return itemData.indexOf(textData) > -1;
+       
       });
       setFilteredDataSource(newData);
       setSearch(text);
@@ -61,7 +61,7 @@ function ListingsScreen({ navigation }) {
   };
 
   
-
+//   searchFilterFunction(user.id)
  
   return (
     <Screen style={styles.screen}>
@@ -73,15 +73,8 @@ function ListingsScreen({ navigation }) {
         </>
       )}
       <ActivityIndicator visible={getListingsApi.loading} />
-      <SearchBar
-          round
-          lightTheme
-          searchIcon={{ size: 24 }}
-          onChangeText={(text) => searchFilterFunction(text)}
-          onClear={(text) => searchFilterFunction('')}
-          placeholder="Search Category..."
-          value={search}
-        />
+      
+     
       <FlatList
     
         data={filteredDataSource}

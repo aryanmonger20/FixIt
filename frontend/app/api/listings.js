@@ -14,7 +14,7 @@ export const addListing = (listing, onUploadProgress) => {
   data.append("categoryId", listing.category.label);
   data.append("description", listing.description);
   data.append("contact", listing.contact);
-  //console.log(User._W.userId);
+  console.log(User._W.userId);
   console.log(data);
   
 
