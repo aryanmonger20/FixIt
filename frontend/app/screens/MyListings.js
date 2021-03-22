@@ -23,13 +23,14 @@ function ListingsScreen({ navigation }) {
 
  
   const [filteredDataSource, setFilteredDataSource] = useState([]);
-  const [masterDataSource, setMasterDataSource] = useState([]);
+ 
 
   useEffect(() => {
     fetch('http://192.168.1.6:9000/api/listings')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
+        //filteredDataSource(responseJson)
       
        // console.log(responseJson)
       })
@@ -39,25 +40,25 @@ function ListingsScreen({ navigation }) {
       });
   }, []);
 
+  var data =[];
 
   const searchFilterFunction = () => {
    
      
       const newData = filteredDataSource.filter(function (item) {
-        const itemData = user.userId
-        const itemd=item.id
-        //console.log(item.id)
-        console.log(itemData)
+        const itemData = user.email
+        const itemd=item.emailuser
+       
 
-         
-        return itemd !== itemData;
+        return(itemd === itemData)
        
       });
-      setFilteredDataSource(newData);
-    
+      //setFilteredDataSource(newData);
+      //searchFilterFunction();
+  data=newData;
     }
   
-    //searchFilterFunction()
+    searchFilterFunction();
   
 
  
@@ -73,13 +74,13 @@ function ListingsScreen({ navigation }) {
       <ActivityIndicator visible={getListingsApi.loading} />
     
       {
-      
+      searchFilterFunction()
       }
           
 
       <FlatList
     
-        data={filteredDataSource}
+        data={data}
         
         //keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
