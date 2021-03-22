@@ -11,18 +11,17 @@ import routes from "../navigation/routes";
 import Screen from "../components/Screen";
 import AppText from "../components/Text";
 import useApi from "../hooks/useApi";
-import useAuth from "../auth/useAuth";
 import filter from 'lodash.filter';
-
+import useAuth from "../auth/useAuth";
 
 
 
 function ListingsScreen({ navigation }) {
 
-    const { user, logOut } = useAuth();
   const getListingsApi = useApi(listingsApi.getListings);
+  const { user, logOut } = useAuth();
 
-  const [search, setSearch] = useState('');
+ 
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
 
@@ -31,50 +30,53 @@ function ListingsScreen({ navigation }) {
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
-        setMasterDataSource(responseJson);
-        console.log(responseJson)
+      
+       // console.log(responseJson)
       })
       .catch((error) => {
         console.error(error);
+        alert("Couldn't retrieve the listings.")
       });
   }, []);
-  
-const text= user.id;
-  const searchFilterFunction = (text) => {
-    
-    if (text) {
-      
-      const newData = masterDataSource.filter(function (item) {
-        const itemData = item.id
-          ? item.categoryId.toUpperCase()
-          : ''.toUpperCase();
+
+
+  const searchFilterFunction = () => {
+   
+     
+      const newData = filteredDataSource.filter(function (item) {
+        const itemData = user.userId
+        const itemd=item.id
+        //console.log(item.id)
+        console.log(itemData)
+
+         
+        return itemd !== itemData;
        
       });
       setFilteredDataSource(newData);
-      setSearch(text);
-    } else {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
-      setFilteredDataSource(masterDataSource);
-      setSearch(text);
+    
     }
-  };
-
   
-//   searchFilterFunction(user.id)
+    //searchFilterFunction()
+  
+
  
   return (
     <Screen style={styles.screen}>
       
-      {getListingsApi.error && (
+      {getListingsApi.error&& (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
           <Button title="Retry" onPress={getListingsApi.request} />
         </>
       )}
       <ActivityIndicator visible={getListingsApi.loading} />
+    
+      {
       
-     
+      }
+          
+
       <FlatList
     
         data={filteredDataSource}

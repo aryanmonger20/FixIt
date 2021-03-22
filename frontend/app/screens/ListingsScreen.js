@@ -34,11 +34,12 @@ function ListingsScreen({ navigation }) {
       })
       .catch((error) => {
         console.error(error);
+        alert("Couldn't retrieve the listings.")
       });
   }, []);
 
   const searchFilterFunction = (text) => {
-    // Check if searched text is not blank
+    
     if (text) {
       // Inserted text is not blank
       // Filter the masterDataSource
@@ -66,7 +67,7 @@ function ListingsScreen({ navigation }) {
   return (
     <Screen style={styles.screen}>
       
-      {getListingsApi.error && (
+      {getListingsApi.error&& (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
           <Button title="Retry" onPress={getListingsApi.request} />

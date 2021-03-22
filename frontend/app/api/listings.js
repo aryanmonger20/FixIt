@@ -4,17 +4,17 @@ const endpoint = "/listings";
 
 const User =  authStorage.getUser();
 const getListings = () => client.get(endpoint);
-console.log(getListings);
+//console.log(getListings);
 
 export const addListing = (listing, onUploadProgress) => {
   const data = new FormData();
-  data.append("id", User._W.userId);
+  data.append("emailuser", User._W.email);
   data.append("title", listing.title);
   data.append("price", listing.price);
   data.append("categoryId", listing.category.label);
   data.append("description", listing.description);
   data.append("contact", listing.contact);
-  console.log(User._W.userId);
+  console.log(User._W.email);
   console.log(data);
   
 
