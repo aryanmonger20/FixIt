@@ -46,8 +46,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   image: {
-    width: "30%",
-    height: 150,
+    width: "38%",
+    height: 136,
   },
   subTitle: {
     color: colors.secondary,
