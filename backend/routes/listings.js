@@ -3,6 +3,7 @@ const router = express.Router();
 const Listing = require("../models/listing");
 
 var urlencodedParser= express.json();
+
 router.get("/", async (req, res) => {
   try {
     const listings = await Listing.find();
@@ -30,18 +31,18 @@ router.post("/", urlencodedParser,async (req, res) => {
     title: req.body._parts[1][1],
     price: req.body._parts[2][1],
     categoryId: req.body._parts[3][1],
-    location: req.body._parts[6][1],
     description:req.body._parts[4][1],
     contact:req.body._parts[5][1],
     image:req.body._parts[6][1],
-    location:req.body._parts[7][1]
+    location: req.body._parts[7][1],
+   
   });
 
   try {
  const a1 = await listings.save();
  // Listing.create(req.body);
   res.json(a1);
-    //console.log(req.body._parts[6][1]);
+    console.log(req.body._parts[7][1]);
     
   } catch (err) {
     res.send("Error " + err);

@@ -1,6 +1,8 @@
 import React from 'react'
 import { Animated, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+
 import Ionicons from 'react-native-vector-icons/Ionicons';
+
 import { FontAwesome } from '@expo/vector-icons';
 
 const numStars = 5;
