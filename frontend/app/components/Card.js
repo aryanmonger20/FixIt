@@ -4,6 +4,7 @@ import { Image } from "react-native-expo-image-cache";
 
 import Text from "./Text";
 import colors from "../config/colors";
+import Rating from "./Rating";
 
 function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl ,category}) {
   return (
@@ -25,7 +26,7 @@ function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl ,category}) {
           <Text style={styles.subTitle} numberOfLines={2}>
             {subTitle}
           </Text>
-
+          <Rating/>
         </View>
       </View>
     </TouchableWithoutFeedback>
@@ -34,6 +35,8 @@ function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl ,category}) {
 
 const styles = StyleSheet.create({
   card: {
+    flex:1,
+    flexDirection:"row",
     borderRadius: 15,
     backgroundColor: colors.white,
     marginBottom: 20,
@@ -43,8 +46,8 @@ const styles = StyleSheet.create({
     padding: 20,
   },
   image: {
-    width: "100%",
-    height: 200,
+    width: "30%",
+    height: 150,
   },
   subTitle: {
     color: colors.secondary,

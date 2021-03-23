@@ -1,7 +1,11 @@
 const mongoose = require('mongoose')
 
 const listingSchema = new mongoose.Schema({
-    emailuser: {
+    image:{
+      type : String,
+    }
+  ,
+  emailuser: {
         type : String,
     },
     title: {

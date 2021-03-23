@@ -16,19 +16,27 @@ import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import {Linking} from 'react-native'
 
 function ListingDetailsScreen({ route }) {
+  
   const listing = route.params;
-const OpenContact=()=>
+  
+  
+
+//contact via phone
+
+  const OpenContact=()=>
 {Linking.openURL(`tel:${listing.contact}`)}
+
+
   return (
     <KeyboardAvoidingView
       behavior="position"
       keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
     >
       <Image
-        style={styles.image}
-       // preview={{ uri: listing.images[0].thumbnailUrl }}
-        tint="light"
-        uri={listing.images}
+       style={styles.image}
+       //preview={{ uri: temp }}
+        tint="dark"
+        uri={listing.image}
       />
       <View style={styles.detailsContainer}>
         <Text style={styles.title}>{listing.title} {" "}{"("}{listing.categoryId}{")"}</Text>

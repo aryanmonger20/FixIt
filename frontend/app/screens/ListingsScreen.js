@@ -31,6 +31,7 @@ function ListingsScreen({ navigation }) {
         setFilteredDataSource(responseJson);
         setMasterDataSource(responseJson);
        // console.log(responseJson)
+
       })
       .catch((error) => {
         console.error(error);
@@ -61,6 +62,18 @@ function ListingsScreen({ navigation }) {
     }
   };
 
+//-------------------////
+// const item=filteredDataSource;
+// console.log(filteredDataSource.contact)
+
+
+  
+
+  
+
+
+
+///-------///////
   
 
  
@@ -86,14 +99,15 @@ function ListingsScreen({ navigation }) {
       <FlatList
     
         data={filteredDataSource}
-        
+       // temp ={searchImage}
         //keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
+          
           <Card
             title={item.title}
             subTitle={"$" + item.price}
             category={item.categoryId}
-            imageUrl={item.images}
+            imageUrl={item.image}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}

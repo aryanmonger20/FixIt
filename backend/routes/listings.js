@@ -33,14 +33,15 @@ router.post("/", urlencodedParser,async (req, res) => {
     location: req.body._parts[6][1],
     description:req.body._parts[4][1],
     contact:req.body._parts[5][1],
-    location:req.body._parts[6][1]
+    image:req.body._parts[6][1],
+    location:req.body._parts[7][1]
   });
 
   try {
  const a1 = await listings.save();
  // Listing.create(req.body);
   res.json(a1);
-    console.log(req.body._parts[6][1]);
+    //console.log(req.body._parts[6][1]);
     
   } catch (err) {
     res.send("Error " + err);
