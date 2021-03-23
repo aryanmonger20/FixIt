@@ -82,7 +82,7 @@ function ListingsScreen({ navigation }) {
     
         data={data}
         
-        //keyExtractor={(listing) => listing.id.toString()}
+        keyExtractor={(data) => data._id.toString()}
         renderItem={({ item }) => (
           <Card
             title={item.title}
