@@ -70,4 +70,16 @@ router.post("/rating",(req,res)=>{
 
   })
 })
+
+router.post("/delete",(req,res)=>{
+  console.log(req.body.userId)
+Listing.findByIdAndDelete(req.body.userId, function (err, docs) {
+  if (err){
+      console.log(err)
+  }
+  else{
+      console.log("Deleted : ", docs);
+  }
+});
+})
 module.exports = router;

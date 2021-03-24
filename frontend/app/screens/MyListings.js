@@ -14,6 +14,7 @@ import AppText from "../components/Text";
 import useApi from "../hooks/useApi";
 import filter from 'lodash.filter';
 import useAuth from "../auth/useAuth";
+import client from "../api/client"
 
 
 
@@ -61,26 +62,7 @@ function ListingsScreen({ navigation }) {
   
     searchFilterFunction();
   
-//  const swipeSettings = {
-//    autoClose :true,
-//    onClose: (secId, rowId, direction) => {
-//     console.log(secId);
-//    },
-//    onOpen: (secId, rowId, direction) => {
-//     console.log(rowId);
-//    },
-//    right: [
-//      {
-//        onPress: () => {
-//        console.log("working");
-//        },
-//        text: 'Delete', type : 'delete'
-//      }
-//    ],
-//   // rowId: this.index,
-//   // sectionId: 1
 
-//  };
  
   return (
     
@@ -104,6 +86,16 @@ function ListingsScreen({ navigation }) {
         
         keyExtractor={(data) => data._id.toString()}
         renderItem={({ item,index }) => {
+         
+          // ------delete function -----//
+
+          const handlePress = (userId) => {
+            alert("Listing Deleted Succesfully")
+            console.log("del")
+            client.post("/listings/delete", {userId})
+          }
+
+
           const swipeSettings = {
             autoClose :true,
          onClose: (secId, rowId, direction) => {
@@ -120,7 +112,7 @@ function ListingsScreen({ navigation }) {
             'Are you sure you want to delete ?',
             [
               { text : 'No', onPress: () => console.log('Cancel Pressed'),style : 'cancel'},
-              { text : 'Yes', onPress:() => console.log(item.title) }
+              { text : 'Yes', onPress:() => handlePress(item._id) }
             ]
           );
         },
@@ -155,7 +147,7 @@ const styles = StyleSheet.create({
   },
   btn: {
     flex: 1,
-    
+
   }
 });
 
