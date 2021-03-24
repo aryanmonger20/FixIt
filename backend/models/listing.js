@@ -28,6 +28,9 @@ const listingSchema = new mongoose.Schema({
     {   type : Number,
         
     },
+    rating:{
+      type:Number
+    },
     location: {
        
         latitude: {

@@ -5,6 +5,7 @@ import {
   KeyboardAvoidingView,
   Platform,
   Keyboard,
+  ScrollView
 } from "react-native";
 import { Image } from "react-native-expo-image-cache";
 import Button from "../components/Button"
@@ -14,6 +15,7 @@ import ListItem from "../components/lists/ListItem";
 import Text from "../components/Text";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import {Linking} from 'react-native'
+import Rating from "../components/Rating"
 
 function ListingDetailsScreen({ route }) {
   
@@ -28,6 +30,7 @@ function ListingDetailsScreen({ route }) {
 
 
   return (
+    <ScrollView>
     <KeyboardAvoidingView
       behavior="position"
       keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
@@ -48,9 +51,9 @@ function ListingDetailsScreen({ route }) {
         <Text style={styles.description}><Text style={styles.pri}>About :</Text>{listing.description}</Text>
 
         
-     
         
       </View>
+      
       <View style={styles.detailsContainer}>
       <Button title="Contact Now"
       onPress={OpenContact}></Button>
@@ -59,15 +62,18 @@ function ListingDetailsScreen({ route }) {
       <View style={styles.detailsContainer}>
       <ContactSellerForm contact={listing.contact} />
       </View>
-      
+      <View style={styles.rating}>
+          <Rating value={listing.rating}/>
+        </View>
       
     </KeyboardAvoidingView>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
   detailsContainer: {
-    padding: 20,
+    padding: 13,
   },
   image: {
     width: "100%",
@@ -81,15 +87,18 @@ const styles = StyleSheet.create({
   },
   title: {
     fontSize: 24,
-    fontWeight: "500",
+    fontWeight: "600",
   },
   description:{
     fontSize: 20,
     fontWeight: "300",
   },
   userContainer: {
-    marginVertical: 40,
+    marginVertical: 30,
   },
+  rating:{
+    marginBottom:100
+  }
 });
 
 export default ListingDetailsScreen;

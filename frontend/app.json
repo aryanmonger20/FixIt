@@ -1,13 +1,13 @@
 {
   "expo": {
-    "name": "MyApp",
+    "name": "FixIt",
     "slug": "MyApp",
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./app/assets/logo.png",
     "splash": {
-      "image": "./app/assets/splash.gif",
+      "image": "./app/assets/splash.jpeg",
       "resizeMode": "contain",
       "backgroundColor": "#0e6ebe"
     },

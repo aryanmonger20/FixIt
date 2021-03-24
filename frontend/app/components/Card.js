@@ -4,9 +4,9 @@ import { Image } from "react-native-expo-image-cache";
 
 import Text from "./Text";
 import colors from "../config/colors";
-import Rating from "./Rating";
+import Rating from "./RatingCard";
 
-function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl ,category}) {
+function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl ,category,rating}) {
   return (
     <TouchableWithoutFeedback onPress={onPress}>
       <View style={styles.card}>
@@ -26,7 +26,7 @@ function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl ,category}) {
           <Text style={styles.subTitle} numberOfLines={2}>
             {subTitle}
           </Text>
-          <Rating/>
+          <Rating value={rating}/>
         </View>
       </View>
     </TouchableWithoutFeedback>

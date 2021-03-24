@@ -1,54 +1,119 @@
-import React from 'react'
-import { Animated, StyleSheet, Text, TouchableOpacity, TouchableWithoutFeedback, View } from 'react-native'
+//This is an example code to make a Star Rating Bar // 
+import React, { Component } from 'react';
+//import react in our code. 
+import {
+  StyleSheet,
+  View,
+  Platform,
+  Text,
+  Image,
+  TouchableOpacity,
+} from 'react-native';
+//import all the components we are going to use.
 
-import Ionicons from 'react-native-vector-icons/Ionicons';
+export default class Myapp extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      Default_Rating: props.value,
+      //To set the default Star Selected
+      Max_Rating: 5,
+      //To set the max number of Stars
+    };
+    //Filled Star. You can also give the path from local
+    this.Star = 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_filled.png';
 
-import { FontAwesome } from '@expo/vector-icons';
+    //Empty Star. You can also give the path from local
+    this.Star_With_Border = 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_corner.png';
+  }
+  UpdateRating(key) {
+    this.setState({ Default_Rating: key });
+    //Keeping the Rating Selected in state
+  }
+  render() {
 
-const numStars = 5;
-
-export default class Rating extends React.Component {
-    state = {
-        rating : 2
+    if(this.state.Default_Rating===0)
+    {console.log("zero")}
+    let React_Native_Rating_Bar = [];
+    //Array to hold the filled or empty Stars
+    for (var i = 1; i <= this.state.Max_Rating; i++) {
+      React_Native_Rating_Bar.push(
+        <TouchableOpacity
+          activeOpacity={0.7}
+          key={i}
+          onPress={this.UpdateRating.bind(this, i)}>
+          <Image
+            style={styles.StarImage}
+            source={
+              i <= this.state.Default_Rating
+                ? { uri: this.Star }
+                : { uri: this.Star_With_Border }
+            }
+          />
+        </TouchableOpacity>
+      );
     }
+   
+    return (
+      <View style={styles.MainContainer}>
+        <Text style={styles.textStyle}>How was your experience with us</Text>
+        <Text style={styles.textStyleSmall}>Please Rate Us</Text>
+        {/*View to hold our Stars*/}
+        <View style={styles.childView}>{React_Native_Rating_Bar}</View>
+        
+        <Text style={styles.textStyle}>
+        {/*To show the rating selected*/}
+     
+          {this.state.Default_Rating} / {this.state.Max_Rating}
+        </Text>
 
-    rate = star => {
-        this.setState({rating: star});
-    }
-
-    render() {
-        let stars = [];
-        for (let i = 1; i <= numStars; i++) {
-            stars.push(
-                <TouchableWithoutFeedback 
-                    key={i} 
-                    onPress={()=> {this.rate(i)}}
-                >
-                    <Animated.View>
-                        <Star filled ={i<= this.state.rating ?true:false} />
-                    </Animated.View>
-                </TouchableWithoutFeedback>
-            );
-        }
-        return (
-            <View style={styles.container}>
-                <View style={{ flexDirection: "row" }} >{stars}</View>
-            </View>
-        );
-    }
-}
-
-class Star extends React.Component {
-    render() {
-        return <FontAwesome name={this.props.filled === true ? "star" : "star-o"} color="gold" size={15} />;
-    }
+        <TouchableOpacity
+          activeOpacity={0.7}
+          style={styles.button}
+          onPress={() => alert(this.state.Default_Rating)}>
+          {/*Clicking on button will show the rating as an alert*/}
+          <Text>Get Selected Value</Text>
+        </TouchableOpacity>
+      </View>
+    );
+  }
 }
 
 const styles = StyleSheet.create({
-    container: {
-        flexDirection: 'row',
-        alignItems: 'center'
-    },
+  MainContainer: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingTop: Platform.OS === 'ios' ? 20 : 0,
+  },
+  childView: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginTop: 30,
+  },
+  button: {
+    justifyContent: 'center',
+    flexDirection: 'row',
+    marginTop: 30,
+    padding: 15,
+    backgroundColor: '#8ad24e',
+  },
+  StarImage: {
+    width: 40,
+    height: 40,
+    resizeMode: 'cover',
+  },
+  textStyle: {
+    textAlign: 'center',
+    fontSize: 23,
+    color: '#000',
+    marginTop: 15,
+  },
+  textStyleSmall: {
+    textAlign: 'center',
+    fontSize: 16,
+
+    color: '#000',
+    marginTop: 15,
+  },
 });
-
-

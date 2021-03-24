@@ -1,5 +1,5 @@
 import React, { useEffect,useState } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { FlatList, StyleSheet,ScrollView, View } from "react-native";
 import { SearchBar } from 'react-native-elements';
 
 import ActivityIndicator from "../components/ActivityIndicator";
@@ -87,6 +87,7 @@ function ListingsScreen({ navigation }) {
         </>
       )}
       <ActivityIndicator visible={getListingsApi.loading} />
+      <View style={styles.search}>
       <SearchBar
           round
           lightTheme
@@ -96,6 +97,8 @@ function ListingsScreen({ navigation }) {
           placeholder="Search Category..."
           value={search}
         />
+      </View>
+      
       <FlatList
     
         data={filteredDataSource}
@@ -108,6 +111,7 @@ function ListingsScreen({ navigation }) {
             subTitle={"$" + item.price}
             category={item.categoryId}
             imageUrl={item.image}
+            rating={item.rating}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
         )}
@@ -121,6 +125,11 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: colors.light,
   },
+  search:{
+    
+    paddingTop:5,
+    paddingBottom:25
+  }
 });
 
 export default ListingsScreen;
