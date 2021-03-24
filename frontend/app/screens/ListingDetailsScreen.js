@@ -63,7 +63,7 @@ function ListingDetailsScreen({ route }) {
       <ContactSellerForm contact={listing.contact} />
       </View>
       <View style={styles.rating}>
-          <Rating value={listing.rating}/>
+          <Rating value={listing}/>
         </View>
       
     </KeyboardAvoidingView>

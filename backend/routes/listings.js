@@ -35,6 +35,9 @@ router.post("/", urlencodedParser,async (req, res) => {
     contact:req.body._parts[5][1],
     image:req.body._parts[6][1],
     location:"",
+    rating:0,
+    totalRating:0,
+    raters:0,
    
   });
 
@@ -50,4 +53,21 @@ router.post("/", urlencodedParser,async (req, res) => {
   }
 });
 
+router.post("/rating",(req,res)=>{
+
+  console.log(req.body)
+  Listing.findByIdAndUpdate(req.body.userId,{"rating": req.body.newRating,"totalRating":req.body.newTotalRating,"raters":req.body.newTotaluser}, function(err, result){
+
+      if(err){
+          res.send(err)
+      }
+      else{
+        console.log("updated")
+        console.log(res.body)
+          res.send(result)
+
+      }
+
+  })
+})
 module.exports = router;

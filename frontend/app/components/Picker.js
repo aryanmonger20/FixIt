@@ -80,11 +80,11 @@ const styles = StyleSheet.create({
     backgroundColor: defaultStyles.colors.light,
     borderRadius: 25,
     flexDirection: "row",
-    padding: 15,
-    marginVertical: 10,
+    padding: 10,
+    marginVertical: 8,
   },
   icon: {
-    marginRight: 10,
+    marginRight: 5,
   },
   placeholder: {
     color: defaultStyles.colors.medium,

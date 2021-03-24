@@ -21,6 +21,7 @@ export default class Rating extends React.Component {
     
 
     render() {
+        //console.log(this.state.rating)
         let stars = [];
         for (let i = 1; i <= numStars; i++) {
             stars.push(

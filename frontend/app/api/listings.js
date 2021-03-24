@@ -30,11 +30,14 @@ export const addListing = (listing, onUploadProgress) => {
   else if (listing.category.label === 'Electrician') {
     temp = 'https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
   }
-  else if (listing.category.label === 'Movies & Music') {
+  else if (listing.category.label === 'Musician') {
     temp = 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
   }
-  else if (listing.category.label === 'Books') {
+  else if (listing.category.label === 'Tutor') {
     temp = 'https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80';
+  }
+  else if (listing.category.label === 'Painter') {
+    temp = 'https://images.unsplash.com/photo-1563898058033-94d26a68166f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2850&q=80';
   }
   else if (listing.category.label === 'Other') {
     temp = 'https://images.unsplash.com/photo-1602843080016-7872abf0ea68?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';

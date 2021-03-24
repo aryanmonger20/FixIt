@@ -31,14 +31,21 @@ const listingSchema = new mongoose.Schema({
     rating:{
       type:Number
     },
+    totalRating:{
+      type:Number
+    },
+    raters:{
+      type:Number
+    },
+
     location: {
        
         latitude: {
-          type: [Number],
+          type: Number,
           required: false
         },
         longitude:{
-          type: [Number],
+          type: Number,
           required: false
         }
       }

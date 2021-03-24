@@ -1,6 +1,6 @@
-//This is an example code to make a Star Rating Bar // 
+
 import React, { Component } from 'react';
-//import react in our code. 
+import client from "../api/client"
 import {
   StyleSheet,
   View,
@@ -9,33 +9,59 @@ import {
   Image,
   TouchableOpacity,
 } from 'react-native';
-//import all the components we are going to use.
+
 
 export default class Myapp extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      Default_Rating: props.value,
-      //To set the default Star Selected
+
+      Default_Rating: props.value.rating,
+      totalrating:props.value.totalRating,
+      raters:props.value.raters,
+      userId:props.value._id,
+     
       Max_Rating: 5,
-      //To set the max number of Stars
+    
     };
-    //Filled Star. You can also give the path from local
+   console.log(props.value)
     this.Star = 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_filled.png';
 
-    //Empty Star. You can also give the path from local
+  
     this.Star_With_Border = 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/star_corner.png';
   }
   UpdateRating(key) {
     this.setState({ Default_Rating: key });
-    //Keeping the Rating Selected in state
+    
   }
   render() {
 
     if(this.state.Default_Rating===0)
     {console.log("zero")}
     let React_Native_Rating_Bar = [];
-    //Array to hold the filled or empty Stars
+   
+    const handlePress = () => {
+       
+       const userRating =this.state.Default_Rating
+       const total=this.state.totalrating
+       const Totaluser=this.state.raters
+
+
+        const userId=this.state.userId
+       const newTotal=((total+userRating)/(Totaluser+1)).toPrecision(3)
+
+       //values to be send
+       const newRating=newTotal
+       const newTotaluser=Totaluser+1;
+       const newTotalRating=total+userRating
+
+       
+       client.post("/listings/rating", { newTotaluser, newTotalRating,newRating,userId})
+       alert("Thanks For Rating !! 😄")
+       //console.log(this.state.totalrating)
+    }
+   
+   
     for (var i = 1; i <= this.state.Max_Rating; i++) {
       React_Native_Rating_Bar.push(
         <TouchableOpacity
@@ -56,21 +82,23 @@ export default class Myapp extends Component {
    
     return (
       <View style={styles.MainContainer}>
-        <Text style={styles.textStyle}>How was your experience with us</Text>
-        <Text style={styles.textStyleSmall}>Please Rate Us</Text>
+        <Text style={styles.textStyle}>How was your experience with him/her</Text>
+        <Text style={styles.textStyleSmall}>Please Rate  !! 🙂 </Text>
         {/*View to hold our Stars*/}
         <View style={styles.childView}>{React_Native_Rating_Bar}</View>
         
-        <Text style={styles.textStyle}>
+        <Text style={styles.textStyle2}>
         {/*To show the rating selected*/}
-     
+       Average Rating :  
           {this.state.Default_Rating} / {this.state.Max_Rating}
         </Text>
 
         <TouchableOpacity
           activeOpacity={0.7}
           style={styles.button}
-          onPress={() => alert(this.state.Default_Rating)}>
+          onPress={() => handlePress()
+          
+         }>
           {/*Clicking on button will show the rating as an alert*/}
           <Text>Get Selected Value</Text>
         </TouchableOpacity>
@@ -113,6 +141,12 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 16,
 
+    color: '#000',
+    marginTop: 15,
+  },
+  textStyle2: {
+    textAlign: 'center',
+    fontSize: 20,
     color: '#000',
     marginTop: 15,
   },
