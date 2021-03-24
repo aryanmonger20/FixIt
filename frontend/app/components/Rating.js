@@ -100,7 +100,7 @@ export default class Myapp extends Component {
           
          }>
           {/*Clicking on button will show the rating as an alert*/}
-          <Text>Get Selected Value</Text>
+          <Text>Tap to Rate</Text>
         </TouchableOpacity>
       </View>
     );
@@ -125,6 +125,7 @@ const styles = StyleSheet.create({
     marginTop: 30,
     padding: 15,
     backgroundColor: '#8ad24e',
+    borderRadius:100
   },
   StarImage: {
     width: 40,
