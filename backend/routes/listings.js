@@ -34,7 +34,7 @@ router.post("/", urlencodedParser,async (req, res) => {
     description:req.body._parts[4][1],
     contact:req.body._parts[5][1],
     image:req.body._parts[6][1],
-    location: req.body._parts[7][1],
+    location:"",
    
   });
 

@@ -1,6 +1,7 @@
 import React, { useEffect,useState } from "react";
-import { FlatList, StyleSheet } from "react-native";
+import { Alert, FlatList, StyleSheet } from "react-native";
 import { SearchBar } from 'react-native-elements';
+import Swipeout from 'react-native-swipeout';
 
 import ActivityIndicator from "../components/ActivityIndicator";
 import Button from "../components/Button";
@@ -60,9 +61,29 @@ function ListingsScreen({ navigation }) {
   
     searchFilterFunction();
   
+//  const swipeSettings = {
+//    autoClose :true,
+//    onClose: (secId, rowId, direction) => {
+//     console.log(secId);
+//    },
+//    onOpen: (secId, rowId, direction) => {
+//     console.log(rowId);
+//    },
+//    right: [
+//      {
+//        onPress: () => {
+//        console.log("working");
+//        },
+//        text: 'Delete', type : 'delete'
+//      }
+//    ],
+//   // rowId: this.index,
+//   // sectionId: 1
 
+//  };
  
   return (
+    
     <Screen style={styles.screen}>
       
       {getListingsApi.error&& (
@@ -77,13 +98,40 @@ function ListingsScreen({ navigation }) {
       searchFilterFunction()
       }
           
-
+      
       <FlatList
-    
         data={data}
         
         keyExtractor={(data) => data._id.toString()}
-        renderItem={({ item }) => (
+        renderItem={({ item,index }) => {
+          const swipeSettings = {
+            autoClose :true,
+         onClose: (secId, rowId, direction) => {
+        
+         },
+        onOpen: (secId, rowId, direction) => {
+    
+          },
+         right: [
+         {
+        onPress: () => {
+          Alert.alert(
+            'Alert',
+            'Are you sure you want to delete ?',
+            [
+              { text : 'No', onPress: () => console.log('Cancel Pressed'),style : 'cancel'},
+              { text : 'Yes', onPress:() => console.log(item.title) }
+            ]
+          );
+        },
+       text: 'Delete', type : 'delete',
+        }
+      ],
+  // rowId: this.index,
+  // sectionId: 1
+   };
+          return(
+          <Swipeout {...swipeSettings} backgroundColor="transparent" style={styles.btn}>
           <Card
             title={item.title}
             subTitle={"$" + item.price}
@@ -91,9 +139,12 @@ function ListingsScreen({ navigation }) {
             imageUrl={item.image}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
-        )}
+          </Swipeout>);
+        }}
       />
+      
     </Screen>
+
   );
 }
 
@@ -102,6 +153,9 @@ const styles = StyleSheet.create({
     padding: 20,
     backgroundColor: colors.light,
   },
+  btn: {
+    flex: 1
+  }
 });
 
 export default ListingsScreen;
