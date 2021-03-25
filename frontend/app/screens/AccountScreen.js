@@ -18,12 +18,12 @@ const menuItems = [
     targetScreen: routes.MYLIST
   },
   {
-    title: "My Messages",
+    title: "About Us",
     icon: {
-      name: "email",
-      backgroundColor: colors.secondary,
+      name: "account-outline",
+      backgroundColor: colors.primary,
     },
-    targetScreen: routes.MESSAGES,
+    targetScreen: routes.ABOUT,
   },
 ];
 

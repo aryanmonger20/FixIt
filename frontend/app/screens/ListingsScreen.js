@@ -1,5 +1,5 @@
-import React, { useEffect,useState } from "react";
-import { FlatList, StyleSheet,ScrollView, View } from "react-native";
+import React, { useEffect, useState } from "react";
+import { FlatList, StyleSheet, ScrollView, View } from "react-native";
 import { SearchBar } from 'react-native-elements';
 
 import ActivityIndicator from "../components/ActivityIndicator";
@@ -25,12 +25,12 @@ function ListingsScreen({ navigation }) {
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.1.7:9000/api/listings')
+    fetch('http://192.168.1.101:9000/api/listings')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
         setMasterDataSource(responseJson);
-       // console.log(responseJson)
+        // console.log(responseJson)
 
       })
       .catch((error) => {
@@ -40,7 +40,7 @@ function ListingsScreen({ navigation }) {
   }, []);
 
   const searchFilterFunction = (text) => {
-    
+
     if (text) {
       // Inserted text is not blank
       // Filter the masterDataSource
@@ -62,25 +62,25 @@ function ListingsScreen({ navigation }) {
     }
   };
 
-//-------------------////
-// const item=filteredDataSource;
-// console.log(filteredDataSource.contact)
-
-
-  
-
-  
+  //-------------------////
+  // const item=filteredDataSource;
+  // console.log(filteredDataSource.contact)
 
 
 
-///-------///////
-  
 
- 
+
+
+
+
+  ///-------///////
+
+
+
   return (
     <Screen style={styles.screen}>
-      
-      {getListingsApi.error&& (
+
+      {getListingsApi.error && (
         <>
           <AppText>Couldn't retrieve the listings.</AppText>
           <Button title="Retry" onPress={getListingsApi.request} />
@@ -88,9 +88,13 @@ function ListingsScreen({ navigation }) {
       )}
       <ActivityIndicator visible={getListingsApi.loading} />
       <View style={styles.search}>
-      <SearchBar
+        <SearchBar
           round
-          lightTheme
+          // lightTheme
+          inputStyle={{ backgroundColor: 'white' }}
+          containerStyle={{ backgroundColor: 'white', borderWidth: 1, borderRadius: 5 }}
+          placeholderTextColor={'#g5g5g5'}
+
           searchIcon={{ size: 24 }}
           onChangeText={(text) => searchFilterFunction(text)}
           onClear={(text) => searchFilterFunction('')}
@@ -98,14 +102,14 @@ function ListingsScreen({ navigation }) {
           value={search}
         />
       </View>
-      
+
       <FlatList
-    
+
         data={filteredDataSource}
-       // temp ={searchImage}
+        // temp ={searchImage}
         //keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
-          
+
           <Card
             title={item.title}
             subTitle={"$" + item.price}
@@ -122,13 +126,13 @@ function ListingsScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 20,
+    padding: 1,
     backgroundColor: colors.light,
   },
-  search:{
-    
-    paddingTop:5,
-    paddingBottom:25
+  search: {
+
+    // paddingTop: 1,
+    paddingBottom: 15
   }
 });
 

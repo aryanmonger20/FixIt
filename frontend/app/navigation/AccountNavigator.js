@@ -1,16 +1,44 @@
 import React from "react";
 import { createStackNavigator } from "@react-navigation/stack";
 import AccountScreen from "../screens/AccountScreen";
-import MessagesScreen from "../screens/MessagesScreen";
-import MyListings from "../screens/MyListings"
+import AboutScreen from "../screens/AboutScreen";
+import MyListings from "../screens/MyListings";
+import users from "../api/users";
 
 const Stack = createStackNavigator();
 
 const AccountNavigator = () => (
   <Stack.Navigator>
-    <Stack.Screen name="Account" component={AccountScreen} />
-    <Stack.Screen name="Messages" component={MessagesScreen} />
-    <Stack.Screen name="Mylist" component={MyListings} />
+    <Stack.Screen name="Account" component={AccountScreen} options={{headerShown: true,
+          title: 'Account',
+          headerStyle: {
+            backgroundColor: '#0e6ebe',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
+    <Stack.Screen name="About" component={AboutScreen} options={{headerShown: true,
+          title: 'About Us',
+          headerStyle: {
+            backgroundColor: '#0e6ebe',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }}/>
+    <Stack.Screen name="Mylist" component={MyListings} options={{headerShown: true,
+          title: 'Hello!!' ,
+          headerStyle: {
+            backgroundColor: '#0e6ebe',
+          },
+          headerTintColor: '#fff',
+          headerTitleStyle: {
+            fontWeight: 'bold',
+          },
+        }} />
   </Stack.Navigator>
 );
 
