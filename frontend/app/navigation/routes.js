@@ -5,5 +5,6 @@ export default Object.freeze({
   ABOUT: "About",
   REGISTER: "Register",
   MYLIST:"Mylist",
-  SEARCH:"search"
+  SEARCH:"search",
+  WELCOMESCREEN:"Welcome"
 });

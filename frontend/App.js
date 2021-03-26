@@ -38,16 +38,16 @@ export default function App() {
     <AuthContext.Provider value={{ user, setUser }}>
       <OfflineNotice />
       <NavigationContainer ref={navigationRef} theme={navigationTheme}>
-        {/* {user ? <AppNavigatorFisrt /> : <AuthNavigator />} */}
-        <AppStack.Navigator
+      {/* <AppStack.Navigator
           headerMode="none"
         >
-          
-          <AppStack.Screen name="Onboarding" component={OnboardingScreen} />
+           <AppStack.Screen name="Onboarding" component={OnboardingScreen} />
+     
           <AppStack.Screen name="WelcomeScreen" component={WelcomeScreen} />
-          <AppStack.Screen name="LOGIN" component={LoginScreen} />
-          <AppStack.Screen name="REGISTER" component={RegisterScreen} />
-        </AppStack.Navigator>
+          <AppStack.Screen name="Login" component={LoginScreen} />
+          <AppStack.Screen name="Register" component={RegisterScreen} /> */}
+        {/* </AppStack.Navigator> */}
+        {user ? <AppNavigator /> : <AuthNavigator />}
       </NavigationContainer>
     </AuthContext.Provider>
   );
