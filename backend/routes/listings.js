@@ -26,7 +26,10 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", urlencodedParser,async (req, res) => {
+  //console.log(req.body._parts);
+  
   const listings = new Listing({
+
     emailuser: req.body._parts[0][1],
     title: req.body._parts[1][1],
     price: req.body._parts[2][1],
@@ -34,7 +37,8 @@ router.post("/", urlencodedParser,async (req, res) => {
     description:req.body._parts[4][1],
     contact:req.body._parts[5][1],
     image:req.body._parts[6][1],
-    location:"",
+    city:req.body._parts[7][1],
+    location:{type:"Point",coordinates:[req.body._parts[8][1].latitude,req.body._parts[8][1].longitude]},
     rating:0,
     totalRating:0,
     raters:0,
@@ -42,10 +46,11 @@ router.post("/", urlencodedParser,async (req, res) => {
   });
 
   try {
+   
  const a1 = await listings.save();
- // Listing.create(req.body);
   res.json(a1);
-    console.log(req.body._parts[7][1]);
+//console.log(req.body._parts[7][1]);
+    console.log(listings);
     
   } catch (err) {
     res.send("Error " + err);
@@ -82,4 +87,34 @@ Listing.findByIdAndDelete(req.body.userId, function (err, docs) {
   }
 });
 })
+
+router.post("/location",(req,res)=>{
+
+  // console.log(req.body.latitude)
+  Listing.points_of_interest.createIndex({ location: "2dsphere" });
+
+  const findLoc=Listing.find({
+  "location": {
+      "$near": {
+          "$geometry": {
+              "type": "Point",
+              "coordinates": [req.body.latitude, req.body.longitude]
+          },
+          "$maxDistance": 2500
+      }
+  }
+  
+},function (err, docs) {
+  if (err){
+    console.log("error")
+     // console.log(coordinates)
+  }
+  else{
+      console.log("Deleted : ", docs);
+      console.log(coordinates)
+  }
+})
+
+;})
+
 module.exports = router;

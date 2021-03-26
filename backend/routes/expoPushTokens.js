@@ -2,8 +2,7 @@ const express = require("express");
 const router = express.Router();
 const Joi = require("joi");
 const User =require("../models/user")
-const usersStore = require("../store/users");
-const auth = require("../middleware/auth");
+
 
 router.post("/",
   async(req, res) => {

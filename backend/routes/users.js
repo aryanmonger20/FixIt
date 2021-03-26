@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const Joi = require("joi");
-const usersStore = require("../store/users");
+
 const validateWith = require("../middleware/validation");
 const User = require("../models/user");
 
@@ -29,13 +28,7 @@ router.post("/", async (req, res) => {
 
  
   
-  // if (usersStore.getUserByEmail(email))
-  //   return res
-  //     .status(400)
-  //     .send({ error: "A user with the given email already exists." });
-
-  // const user = { name, email, password };
-  // usersStore.addUser(user);
+  
   try {
     if (existingUser){   
       // console.log("heloo" + existingUser)
