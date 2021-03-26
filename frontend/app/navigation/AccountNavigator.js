@@ -30,7 +30,7 @@ const AccountNavigator = () => (
           },
         }}/>
     <Stack.Screen name="Mylist" component={MyListings} options={{headerShown: true,
-          title: 'Hello!!' ,
+          title: 'Hello!!'  ,
           headerStyle: {
             backgroundColor: '#0e6ebe',
           },

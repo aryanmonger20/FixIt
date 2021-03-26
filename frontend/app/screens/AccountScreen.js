@@ -20,7 +20,7 @@ const menuItems = [
   {
     title: "About Us",
     icon: {
-      name: "account-outline",
+      name: "information-variant",
       backgroundColor: colors.primary,
     },
     targetScreen: routes.ABOUT,
