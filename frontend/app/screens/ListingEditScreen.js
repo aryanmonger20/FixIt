@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet ,Text} from "react-native";
+import { ScrollView, StyleSheet ,Text} from "react-native";
 import * as Yup from "yup";
 
 import {
@@ -119,6 +119,7 @@ function ListingEditScreen() {
 
   return (
     <Screen style={styles.container}>
+      <ScrollView>
       <UploadScreen
         onDone={() => setUploadVisible(false)}
         progress={progress}
@@ -133,12 +134,21 @@ function ListingEditScreen() {
           description: "",
           category: null,
           contact:"",
+          city:"",
         }}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
       >
         {/* <FormImagePicker name="images" /> */}
-        <FormField maxLength={255} name="title" placeholder="Name" />
+        <FormField 
+        maxLength={255} 
+        name="title" 
+        placeholder="Name" />
+
+        <FormField
+         maxLength={255} 
+         name="city"
+          placeholder="City" />
         <FormField
           keyboardType="numeric"
           maxLength={8}
@@ -171,6 +181,7 @@ function ListingEditScreen() {
         />
         <SubmitButton title="Post" />
       </Form>
+      </ScrollView>
     </Screen>
   );
 }

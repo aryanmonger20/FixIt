@@ -4,8 +4,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const cors =require("cors")
 
-
-const categories = require("./routes/categories");
 const listings = require("./routes/listings");
 
 const users = require("./routes/users");

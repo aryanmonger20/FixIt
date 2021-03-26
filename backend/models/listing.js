@@ -5,6 +5,9 @@ const listingSchema = new mongoose.Schema({
       type : String,
     }
   ,
+  city:{
+    type : String,
+  },
   emailuser: {
         type : String,
     },

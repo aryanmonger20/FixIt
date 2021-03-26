@@ -52,6 +52,7 @@ export const addListing = (listing, onUploadProgress) => {
   data.append("description", listing.description);
   data.append("contact", listing.contact);
   data.append("image",temp)
+  data.append("city",listing.city)
   console.log(User._W.email);
   console.log(data);
   
