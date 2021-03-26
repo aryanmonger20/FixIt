@@ -124,7 +124,7 @@ function ListingEditScreen() {
         progress={progress}
         visible={uploadVisible}
       />
-      <Text style={styles.contact}>Sign Urself for Job</Text>
+      <Text style={styles.contact}>Registration From For Workers!!</Text>
       <Form
         initialValues={{
           id:users.id,
@@ -136,9 +136,10 @@ function ListingEditScreen() {
         }}
         onSubmit={handleSubmit}
         validationSchema={validationSchema}
+        style={styles.name}
       >
         {/* <FormImagePicker name="images" /> */}
-        <FormField maxLength={255} name="title" placeholder="Name" />
+        <FormField maxLength={255} name="title" placeholder="Name"  />
         <FormField
           keyboardType="numeric"
           maxLength={8}
@@ -156,7 +157,7 @@ function ListingEditScreen() {
         />
         <FormField
         minLength={10}
-          maxLength={10}
+          maxLength={12}
           keyboardType="numeric"
           name="contact"
           numberOfLines={1}
@@ -169,7 +170,7 @@ function ListingEditScreen() {
           numberOfLines={3}
           placeholder="About You (in less than 100 words)"
         />
-        <SubmitButton title="Post" />
+        <SubmitButton  title="Post" />
       </Form>
     </Screen>
   );
@@ -178,16 +179,23 @@ function ListingEditScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    backgroundColor:"#499cf5"
   },
   contact:{
     padding:15,
-    fontSize:38,
-    color:colors.primary,
+    fontSize:22,
+    color:colors.white,
     fontWeight:"600",
     textShadowOffset:{width:10,height:10},
    //fontFamily:"Roboto",
     textShadowRadius:10
 
-  }
+  },
+  name: {
+    elevation:10,
+    borderRadius:6,
+    borderColor:"#0c0c0c"
+  },
+ 
 });
 export default ListingEditScreen;

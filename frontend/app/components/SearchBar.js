@@ -1,5 +1,6 @@
 import { SearchBar } from 'react-native-elements';
-import React, { useEffect,useState } from "react";
+import React, { useEffect, useState } from "react";
+import colors from '../config/colors';
 
 
 import { StyleSheet, Text, View } from 'react-native'
@@ -19,15 +20,30 @@ export default class App extends React.Component {
     const { search } = this.state;
 
     return (
-      <SearchBar
-      lightTheme
-      rounded="true"
-        placeholder="Type Here..."
-        onChangeText={this.updateSearch}
-        value={search}
-      />
+
+      
+
+
+
+      <View style={styles.search}>
+
+        <SearchBar
+          lightTheme
+          rounded="true"
+          placeholder="Type Here..."
+          onChangeText={this.updateSearch}
+          value={search}
+        
+        />
+      </View>
     );
   }
 }
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  search:{
+    backgroundColor: colors.light,
+    marginBottom:15,
+  }
+  
+})

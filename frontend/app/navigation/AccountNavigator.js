@@ -4,6 +4,7 @@ import AccountScreen from "../screens/AccountScreen";
 import AboutScreen from "../screens/AboutScreen";
 import MyListings from "../screens/MyListings";
 import users from "../api/users";
+import SearchBar from '../components/SearchBar';
 
 const Stack = createStackNavigator();
 
@@ -39,6 +40,7 @@ const AccountNavigator = () => (
             fontWeight: 'bold',
           },
         }} />
+    {/* <Stack.Screen name="search" component={SearchBar}/> */}
   </Stack.Navigator>
 );
 

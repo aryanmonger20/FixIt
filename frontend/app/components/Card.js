@@ -37,13 +37,27 @@ const styles = StyleSheet.create({
   card: {
     flex:1,
     flexDirection:"row",
-    borderRadius: 15,
+    borderBottomEndRadius: 10,
+    borderBottomLeftRadius:10,
+    shadowColor: "#000",
+    shadowOffset: {
+      width: 0,
+      height: 7,
+    },
+    shadowOpacity: 0.41,
+    shadowRadius: 9.11,
+    
+    elevation: 15, 
     backgroundColor: colors.white,
     marginBottom: 20,
     overflow: "hidden",
   },
   detailsContainer: {
+    flex:1,
+    justifyContent:"center",
     padding: 20,
+    backgroundColor:"#f5f5f5"
+    
   },
   image: {
     width: "38%",

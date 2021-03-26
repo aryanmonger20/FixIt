@@ -87,13 +87,14 @@ function ListingsScreen({ navigation }) {
         </>
       )}
       <ActivityIndicator visible={getListingsApi.loading} />
+      
       <View style={styles.search}>
         <SearchBar
-          round
           // lightTheme
+          round
           inputStyle={{ backgroundColor: 'white' }}
           containerStyle={{ backgroundColor: 'white', borderWidth: 1, borderRadius: 5 }}
-          placeholderTextColor={'#g5g5g5'}
+          placeholderTextColor={"#ff00f0"}
 
           searchIcon={{ size: 24 }}
           onChangeText={(text) => searchFilterFunction(text)}

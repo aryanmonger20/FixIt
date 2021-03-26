@@ -77,7 +77,8 @@ function AppPicker({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: defaultStyles.colors.light,
+    elevation:10,
+    backgroundColor: defaultStyles.colors.new,
     borderRadius: 25,
     flexDirection: "row",
     padding: 10,
@@ -87,11 +88,12 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   placeholder: {
-    color: defaultStyles.colors.medium,
+    color: defaultStyles.colors.secondary,
     flex: 1,
   },
   text: {
     flex: 1,
+    color:"black"
   },
 });
 
