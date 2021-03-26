@@ -38,17 +38,18 @@ const listingSchema = new mongoose.Schema({
       type:Number
     },
 
-    location: {
-       
-        latitude: {
-          type: Number,
-          required: false
+      location: {
+        type: {
+          type: String, // Don't do `{ location: { type: String } }`
+          enum: ['Point'], // 'location.type' must be 'Point'
+          required: true
         },
-        longitude:{
-          type: Number,
-          required: false
+        coordinates: {
+          type: [Number],
+          //required: true
         }
       }
+      
 })
 
 module.exports = mongoose.model('Listing',listingSchema)

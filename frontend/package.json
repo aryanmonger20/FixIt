@@ -47,8 +47,10 @@
     "react-native-reanimated": "~1.13.0",
     "react-native-safe-area-context": "3.1.9",
     "react-native-screens": "~2.15.0",
+    "react-native-svg": "12.1.0",
     "react-native-swipeout": "^2.3.6",
     "react-native-web": "~0.14.10",
+    "rn-content-loader": "^0.0.6",
     "yup": "^0.32.8",
     "yup-phone": "^1.2.19"
   },
