@@ -141,7 +141,27 @@ function ListingEditScreen() {
         style={styles.name}
       >
         {/* <FormImagePicker name="images" /> */}
+        <FormField 
+        maxLength={255} 
+        name="title" 
+        placeholder="Name" />
+
         <FormField
+         maxLength={255} 
+         name="city"
+          placeholder="City" />
+        <FormField
+          keyboardType="numeric"
+          maxLength={8}
+          name="price"
+          placeholder="Price"
+          width={120}
+        />
+        <Picker
+          items={categories}
+          name="category"
+          numberOfColumns={3}
+          PickerItemComponent={CategoryPickerItem}
           placeholder="Category"
           width="50%"
         />
@@ -170,20 +190,22 @@ function ListingEditScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    //backgroundColor:"#499cf5"
+    backgroundColor:"#499cf5"
   },
   contact:{
     padding:15,
-    fontSize:40,
-    color:colors.secondary,
+    fontSize:22,
+    color:colors.white,
     fontWeight:"600",
-  
+    textShadowOffset:{width:10,height:10},
+   //fontFamily:"Roboto",
+    textShadowRadius:10
 
   },
   name: {
     elevation:10,
     borderRadius:6,
-    //borderColor:"#0c0c0c"
+    borderColor:"#0c0c0c"
   },
  
 });
