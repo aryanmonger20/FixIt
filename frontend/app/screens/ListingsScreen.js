@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { FlatList, StyleSheet, ScrollView, View } from "react-native";
 import { SearchBar } from 'react-native-elements';
-import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
+// import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
 import ActivityIndicator from "../components/ActivityIndicator";
 import Button from "../components/Button";
@@ -27,7 +27,7 @@ function ListingsScreen({ navigation ,useAuth}) {
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.1.7:9000/api/listings')
+    fetch('http://192.168.186.31:9000/api/listings')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
@@ -135,7 +135,7 @@ function ListingsScreen({ navigation ,useAuth}) {
           value={search}
         />
       </View>
-      <SearchBar/>
+      {/* <SearchBar/> */}
       <FlatList
 
         data={filteredDataSource}
