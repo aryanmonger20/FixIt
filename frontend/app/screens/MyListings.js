@@ -28,7 +28,7 @@ function ListingsScreen({ navigation }) {
  
 
   useEffect(() => {
-    fetch('http://192.168.186.31:9000/api/listings')
+    fetch('http://192.168.1.7:9000/api/listings')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
@@ -55,12 +55,11 @@ function ListingsScreen({ navigation }) {
         return(itemd === itemData)
        
       });
-      //setFilteredDataSource(newData);
-      //searchFilterFunction();
+      
   data=newData;
     }
   
-    searchFilterFunction();
+    
   
 
  

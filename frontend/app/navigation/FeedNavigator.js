@@ -9,15 +9,9 @@ import { NavigationContainer } from "@react-navigation/native";
 import SearchBar from "../components/SearchBar";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import useAuth from "../auth/useAuth"
-
-// const user =useAuth();
 const Stack = createStackNavigator();
 
-
-
 const FeedNavigator = (navigation) => (
-
   <Stack.Navigator mode="modal">
     <Stack.Screen name="Listings" component={ListingsScreen}
       options={{
@@ -25,9 +19,9 @@ const FeedNavigator = (navigation) => (
         headerTitleAlign:"left",
         headerTitle: 
           <View >
-            <Text style={styles.headertitle}>{}</Text>
+            <Text style={styles.headertitle}>Hello User</Text>
             <Text style={styles.headertitle2}><MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/>Your Location</Text>
-            
+         
             
 
           </View>
@@ -42,7 +36,6 @@ const FeedNavigator = (navigation) => (
         },
         headerRight: () => (
           <Button
-          style={styles.Button}
           onPress={() => navigation.navigate(routes.SEARCH)}
             title='search'
             
@@ -52,7 +45,7 @@ const FeedNavigator = (navigation) => (
           }}
     />
          
-    <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} options={{
+         <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} options={{
         HeaderShown: true,
         headerTitle: 'ListingDetails',
         headerStyle: {
@@ -70,15 +63,14 @@ const FeedNavigator = (navigation) => (
 export default FeedNavigator;
 
 const styles = StyleSheet.create({
-  Button:{
-    marginRight:5,
-    padding:50,
-    //backgroundColor:"#000000"
+  buttomStyle:{
+    marginLeft:5,
+    padding:5,
   },
   headertitle:{
     color:"white",
     alignItems:"flex-start",
-    marginLeft:0,
+    marginLeft:18,
     fontSize:15,
   },
   headertitle2:{

@@ -23,8 +23,12 @@ function ListingsScreen({ navigation ,useAuth}) {
   const getListingsApi = useApi(listingsApi.getListings);
 
   const [search, setSearch] = useState('');
+  const [search2, setSearch2] = useState('');
   const [filteredDataSource, setFilteredDataSource] = useState([]);
   const [masterDataSource, setMasterDataSource] = useState([]);
+
+  const [filteredDataSource2, setFilteredDataSource2] = useState([]);
+  const [masterDataSource2, setMasterDataSource2] = useState([]);
 
   useEffect(() => {
     fetch('http://192.168.1.7:9000/api/listings')
@@ -32,6 +36,8 @@ function ListingsScreen({ navigation ,useAuth}) {
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
         setMasterDataSource(responseJson);
+        setFilteredDataSource2(responseJson);
+        setMasterDataSource2(responseJson);
         // console.log(responseJson)
 
       })
@@ -47,52 +53,56 @@ function ListingsScreen({ navigation ,useAuth}) {
 
 
 
-// const searchFilterFunction = (text) => {
-
-//     if (text) {
-//       // Inserted text is not blank
-//       // Filter the masterDataSource
-//       // Update FilteredDataSource
-//       const newData = masterDataSource.filter(function (item) {
-//         const itemData = item.categoryId
-//           ? item.categoryId.toUpperCase()
-//           : ''.toUpperCase();
-//         const textData = text.toUpperCase();
-//         return itemData.indexOf(textData) > -1;
-//       });
-//       setFilteredDataSource(newData);
-//       setSearch(text);
-//     } else {
-//       // Inserted text is blank
-//       // Update FilteredDataSource with masterDataSource
-//       setFilteredDataSource(masterDataSource);
-//       setSearch(text);
-//     }
-//   };
-
-
-
-
-  const searchFilterFunction = (text) => {
+const searchFilterFunction = (text) => {
 
     if (text) {
       // Inserted text is not blank
       // Filter the masterDataSource
       // Update FilteredDataSource
       const newData = masterDataSource.filter(function (item) {
-        const itemData = item.categoryId
-          ? item.categoryId.toUpperCase()
+        const itemData = item.city
+          ? item.city.toUpperCase()
           : ''.toUpperCase();
         const textData = text.toUpperCase();
         return itemData.indexOf(textData) > -1;
       });
       setFilteredDataSource(newData);
       setSearch(text);
+      setFilteredDataSource2(newData);
+      setMasterDataSource2(newData);
     } else {
       // Inserted text is blank
       // Update FilteredDataSource with masterDataSource
       setFilteredDataSource(masterDataSource);
+      setFilteredDataSource2(masterDataSource);
+      setMasterDataSource2(masterDataSource);
       setSearch(text);
+    }
+  };
+
+ 
+
+
+  const searchFilterFunction2 = (text) => {
+
+    if (text) {
+      // Inserted text is not blank
+      // Filter the masterDataSource
+      // Update FilteredDataSource
+      const newData2 = masterDataSource2.filter(function (item) {
+        const itemData = item.categoryId
+          ? item.categoryId.toUpperCase()
+          : ''.toUpperCase();
+        const textData = text.toUpperCase();
+        return itemData.indexOf(textData) > -1;
+      });
+      setFilteredDataSource2(newData2);
+      setSearch2(text);
+    } else {
+      // Inserted text is blank
+      // Update FilteredDataSource with masterDataSource
+      setFilteredDataSource2(masterDataSource2);
+      setSearch2(text);
     }
   };
 
@@ -131,14 +141,26 @@ function ListingsScreen({ navigation ,useAuth}) {
           searchIcon={{ size: 24 }}
           onChangeText={(text) => searchFilterFunction(text)}
           onClear={(text) => searchFilterFunction('')}
-          placeholder="Search Category..."
+          placeholder="Search City..."
           value={search}
         />
+        <SearchBar
+          round
+           lightTheme
+         // inputStyle={{ backgroundColor: 'white' }}
+          containerStyle={{ backgroundColor: 'white', borderWidth: 1, borderRadius: 2 }}
+          placeholderTextColor={'white'}
+          searchIcon={{ size: 24 }}
+          onChangeText={(text) => searchFilterFunction2(text)}
+          onClear={(text) => searchFilterFunction2('')}
+          placeholder="Search Category..."
+          value={search2}
+        />
       </View>
-      <SearchBar/>
+      {/* <SearchBar/> */}
       <FlatList
 
-        data={filteredDataSource}
+        data={filteredDataSource2}
         // temp ={searchImage}
         //keyExtractor={(listing) => listing.id.toString()}
         renderItem={({ item }) => (
@@ -150,6 +172,7 @@ function ListingsScreen({ navigation ,useAuth}) {
             category={item.categoryId}
             imageUrl={item.image}
             rating={item.rating}
+            city={item.city}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
           </>
