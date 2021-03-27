@@ -5,10 +5,12 @@ import LoginScreen from "../screens/LoginScreen";
 import RegisterScreen from "../screens/RegisterScreen";
 import WelcomeScreen from "../screens/WelcomeScreen";
 import Onboarding from "../screens/OnboardingScreen"
-
+import auth from "../auth/useAuth"
 const Stack = createStackNavigator();
 
+
 const AuthNavigator = () => (
+  
   <Stack.Navigator>
     <Stack.Screen name="Onboarding"
     options={{ headerShown: false }}

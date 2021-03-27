@@ -42,6 +42,7 @@
     "react-native-elements": "^3.3.2",
     "react-native-expo-image-cache": "^4.1.0",
     "react-native-gesture-handler": "~1.8.0",
+    "react-native-google-places-autocomplete": "^2.2.0",
     "react-native-onboarding-swiper": "^1.1.4",
     "react-native-progress": "^4.1.2",
     "react-native-reanimated": "~1.13.0",

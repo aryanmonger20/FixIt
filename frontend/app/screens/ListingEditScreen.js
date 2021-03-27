@@ -170,22 +170,20 @@ function ListingEditScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor:"#44a0eb"
+    //backgroundColor:"#499cf5"
   },
   contact:{
     padding:15,
-    fontSize:22,
-    color:colors.white,
+    fontSize:40,
+    color:colors.secondary,
     fontWeight:"600",
-    textShadowOffset:{width:10,height:10},
-   //fontFamily:"Roboto",
-    textShadowRadius:10
+  
 
   },
   name: {
     elevation:10,
     borderRadius:6,
-    borderColor:"#0c0c0c"
+    //borderColor:"#0c0c0c"
   },
  
 });

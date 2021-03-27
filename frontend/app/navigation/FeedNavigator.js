@@ -9,18 +9,25 @@ import { NavigationContainer } from "@react-navigation/native";
 import SearchBar from "../components/SearchBar";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import useAuth from "../auth/useAuth"
+
+// const user =useAuth();
 const Stack = createStackNavigator();
 
+
+
 const FeedNavigator = (navigation) => (
+
   <Stack.Navigator mode="modal">
     <Stack.Screen name="Listings" component={ListingsScreen}
       options={{
-        HeaderShown: true,
-        title: 
+        headerShown: true,
+        headerTitleAlign:"left",
+        headerTitle: 
           <View >
-            <Text style={styles.headertitle}>Hii Rohit</Text>
-            <Text style={styles.headertitle}>Your Location</Text>
-            <MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/>
+            <Text style={styles.headertitle}>{}</Text>
+            <Text style={styles.headertitle2}><MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/>Your Location</Text>
+            
             
 
           </View>
@@ -35,6 +42,7 @@ const FeedNavigator = (navigation) => (
         },
         headerRight: () => (
           <Button
+          style={styles.Button}
           onPress={() => navigation.navigate(routes.SEARCH)}
             title='search'
             
@@ -44,9 +52,9 @@ const FeedNavigator = (navigation) => (
           }}
     />
          
-    <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} options={{ title: 'ListingDetails' }}  options={{
+    <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} options={{
         HeaderShown: true,
-        title: 'ListingDetails',
+        headerTitle: 'ListingDetails',
         headerStyle: {
           backgroundColor: '#0e6ebe',
         },
@@ -62,12 +70,24 @@ const FeedNavigator = (navigation) => (
 export default FeedNavigator;
 
 const styles = StyleSheet.create({
-  buttomStyle:{
-    marginLeft:5,
-    padding:5,
+  Button:{
+    marginRight:5,
+    padding:50,
+    //backgroundColor:"#000000"
   },
   headertitle:{
-    color:"white"
+    color:"white",
+    alignItems:"flex-start",
+    marginLeft:0,
+    fontSize:15,
+  },
+  headertitle2:{
+    color:"white",
+    fontSize:15,
+    alignItems:"flex-start",
+    marginTop:5,
+    marginLeft:0,
+    marginBottom:5
   },
   headericon:{
     color:"black",
