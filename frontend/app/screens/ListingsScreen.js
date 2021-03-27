@@ -25,7 +25,7 @@ function ListingsScreen({ navigation }) {
   const [masterDataSource, setMasterDataSource] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.1.9:9000/api/listings')
+    fetch('http://192.168.186.31:9000/api/listings')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);
@@ -90,20 +90,11 @@ function ListingsScreen({ navigation }) {
       
       <View style={styles.search}>
         <SearchBar
-<<<<<<< HEAD
-          // lightTheme
-          round
-          inputStyle={{ backgroundColor: 'white' }}
-          containerStyle={{ backgroundColor: 'white', borderWidth: 1, borderRadius: 5 }}
-          placeholderTextColor={"#ff00f0"}
-=======
           round
            lightTheme
          // inputStyle={{ backgroundColor: 'white' }}
           containerStyle={{ backgroundColor: 'white', borderWidth: 1, borderRadius: 2 }}
           placeholderTextColor={'white'}
->>>>>>> 1763ce4326e25c725288e4233895788a7a67a4d0
-
           searchIcon={{ size: 24 }}
           onChangeText={(text) => searchFilterFunction(text)}
           onClear={(text) => searchFilterFunction('')}

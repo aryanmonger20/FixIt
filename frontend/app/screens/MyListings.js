@@ -28,11 +28,7 @@ function ListingsScreen({ navigation }) {
  
 
   useEffect(() => {
-<<<<<<< HEAD
-    fetch('http://192.168.1.101:9000/api/listings')
-=======
-    fetch('http://192.168.1.9:9000/api/listings')
->>>>>>> 1763ce4326e25c725288e4233895788a7a67a4d0
+    fetch('http://192.168.186.31:9000/api/listings')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);

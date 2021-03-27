@@ -141,19 +141,7 @@ function ListingEditScreen() {
         style={styles.name}
       >
         {/* <FormImagePicker name="images" /> */}
-<<<<<<< HEAD
         <FormField maxLength={255} name="title" placeholder="Name"  />
-=======
-        <FormField 
-        maxLength={255} 
-        name="title" 
-        placeholder="Name" />
-
-        <FormField
-         maxLength={255} 
-         name="city"
-          placeholder="City" />
->>>>>>> 1763ce4326e25c725288e4233895788a7a67a4d0
         <FormField
           keyboardType="numeric"
           maxLength={8}
@@ -194,7 +182,7 @@ function ListingEditScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor:"#499cf5"
+    backgroundColor:"#44a0eb"
   },
   contact:{
     padding:15,

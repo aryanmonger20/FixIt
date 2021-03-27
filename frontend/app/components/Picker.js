@@ -47,12 +47,12 @@ function AppPicker({
           <MaterialCommunityIcons
             name="chevron-down"
             size={20}
-            color={defaultStyles.colors.medium}
+            color={defaultStyles.colors.white}
           />
         </View>
       </TouchableWithoutFeedback>
       <Modal visible={modalVisible} animationType="slide">
-        <Screen>
+        <Screen >
           <Button title="Close" onPress={() => setModalVisible(false)} />
           <FlatList
             data={items}
@@ -78,7 +78,7 @@ function AppPicker({
 const styles = StyleSheet.create({
   container: {
     elevation:10,
-    backgroundColor: defaultStyles.colors.new,
+    backgroundColor: defaultStyles.colors.primary,
     borderRadius: 25,
     flexDirection: "row",
     padding: 10,
@@ -88,13 +88,13 @@ const styles = StyleSheet.create({
     marginRight: 5,
   },
   placeholder: {
-    color: defaultStyles.colors.secondary,
+    color: defaultStyles.colors.white,
     flex: 1,
   },
   text: {
     flex: 1,
     color:"black"
-  },
+  }
 });
 
 export default AppPicker;

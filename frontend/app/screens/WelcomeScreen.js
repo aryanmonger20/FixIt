@@ -3,6 +3,7 @@ import { ImageBackground, StyleSheet, View, Image, Text } from "react-native";
 
 import Button from "../components/Button";
 import routes from "../navigation/routes";
+import colors from '../config/colors';
 
 function WelcomeScreen({ navigation }) {
   return (
@@ -36,10 +37,12 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
+    // backgroundColor:"white",
   },
   buttonsContainer: {
     padding: 20,
     width: "100%",
+    //backgroundColor:colors.medium,
   },
   logo: {
     width: 100,
@@ -54,8 +57,8 @@ const styles = StyleSheet.create({
     fontSize: 25,
     fontWeight: "600",
     paddingVertical: 20,
-    color:"#fc5c65"
-  },
+    color:"#fcff65"
+  }
 });
 
 export default WelcomeScreen;
