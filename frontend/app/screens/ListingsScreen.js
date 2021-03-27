@@ -41,11 +41,34 @@ function ListingsScreen({ navigation ,useAuth}) {
         
       });
   }, []);
+
+
 //----//
 
 
 
+// const searchFilterFunction = (text) => {
 
+//     if (text) {
+//       // Inserted text is not blank
+//       // Filter the masterDataSource
+//       // Update FilteredDataSource
+//       const newData = masterDataSource.filter(function (item) {
+//         const itemData = item.categoryId
+//           ? item.categoryId.toUpperCase()
+//           : ''.toUpperCase();
+//         const textData = text.toUpperCase();
+//         return itemData.indexOf(textData) > -1;
+//       });
+//       setFilteredDataSource(newData);
+//       setSearch(text);
+//     } else {
+//       // Inserted text is blank
+//       // Update FilteredDataSource with masterDataSource
+//       setFilteredDataSource(masterDataSource);
+//       setSearch(text);
+//     }
+//   };
 
 
 
