@@ -42,8 +42,8 @@ export default function App() {
         {/* <AppStack.Navigator
           headerMode="none"
         >
-          
-          <AppStack.Screen name="Onboarding" component={OnboardingScreen} />
+           <AppStack.Screen name="Onboarding" component={OnboardingScreen} />
+     
           <AppStack.Screen name="WelcomeScreen" component={WelcomeScreen} />
           <AppStack.Screen name="LOGIN" component={LoginScreen} />
           <AppStack.Screen name="REGISTER" component={RegisterScreen} /> */}

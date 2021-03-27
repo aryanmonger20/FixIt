@@ -2,6 +2,7 @@ import React from 'react';
 import { View, Text, Image, TouchableOpacity, StyleSheet } from 'react-native';
 
 import Onboarding from 'react-native-onboarding-swiper';
+import routes from "../navigation/routes"
 
 const Dots = ({selected}) => {
     let backgroundColor;
@@ -54,26 +55,26 @@ const OnboardingScreen = ({navigation}) => {
         NextButtonComponent={Next}
         DoneButtonComponent={Done}
         DotComponent={Dots}
-        onSkip={() => navigation.replace("Login")}
-        onDone={() => navigation.navigate("Login")}
+        onSkip={() =>   navigation.navigate(routes.WELCOMESCREEN)}
+        onDone={() => navigation.navigate(routes.WELCOMESCREEN)}
         pages={[
           {
             backgroundColor: '#a6e4d0',
-            image: <Image source={require('../assets/onboarding-img1.png')} />,
-            title: 'Find Your Needs',
-            subtitle: 'A New Way To Connect With The World',
+            image: <Image source={require('../assets/findYourNeeds.png')} />,
+            title: 'Find your needs',
+            subtitle: 'A New Way To Connect With The Workers',
           },
           {
             backgroundColor: '#fdeb93',
-            image: <Image source={require('../assets/onboarding-img1.png')} />,
-            title: 'Receive Your Work',
-            subtitle: 'Share Your Thoughts With Similar Kind of People',
+            image: <Image source={require('../assets/chat.png')} />,
+            title: 'Chat with workers',
+            subtitle: 'Share Your Problem or Requirements with them',
           },
           {
             backgroundColor: '#e9bcbe',
             image: <Image source={require('../assets/onboarding-img3.png')} />,
-            title: 'We glad to serve you',
-            subtitle: "Let The Spot Light Capture You",
+            title: 'Receive Your work',
+            subtitle: "We will serve your work at your doorstep",
           },
         ]}
       />
