@@ -3,7 +3,7 @@ import { View, StyleSheet, TouchableOpacity } from "react-native";
 
 import Icon from "./Icon";
 import Text from "./Text";
-
+import colors from '../config/colors'
 function CategoryPickerItem({ item, onPress }) {
   return (
     <View style={styles.container}>
