@@ -16,6 +16,7 @@ import Text from "../components/Text";
 import { TouchableWithoutFeedback } from "react-native-gesture-handler";
 import {Linking} from 'react-native'
 import Rating from "../components/Rating"
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 function ListingDetailsScreen({ route }) {
   
@@ -42,30 +43,32 @@ function ListingDetailsScreen({ route }) {
         uri={listing.image}
       />
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{listing.title} {" "}{"("}{listing.categoryId}{")"}</Text>
-        <Text style={styles.price}><Text style={styles.pri}>Minimum Wage :</Text>₹{listing.price}</Text>
+        <Text style={styles.title}>{listing.title}</Text>
+        {/* <Text style={styles.category}>{listing.categoryId}</Text> */}
+        <Text style={styles.category}><MaterialIcons name="electrical-services" size={15} color="white" />{" "}{listing.categoryId}{" "}</Text>
+        <Text style={styles.price}>₹{listing.price}<Text style={styles.pri}> / hour</Text></Text>
        
        
-        <Text style={styles.description}>{listing.contact}</Text>
+        {/* <Text style={styles.description}>{listing.contact}</Text> */}
 
-        <Text style={styles.description}><Text style={styles.pri}>About :</Text>{listing.description}</Text>
+        <Text style={styles.pri}><Text style={styles.pri}>About :</Text></Text>
+        <Text style={styles.description}>{"\" "}{listing.description}{" \""}</Text>
+        
 
         
         
       </View>
       
       <View style={styles.detailsContainer}>
-      <Button title="Contact Now"
+      <Button  title="Contact Now"
       onPress={OpenContact}></Button>
       </View>
-
       <View style={styles.detailsContainer}>
       <ContactSellerForm contact={listing.contact} />
       </View>
       <View style={styles.rating}>
           <Rating value={listing}/>
         </View>
-      
     </KeyboardAvoidingView>
     </ScrollView>
   );
@@ -73,32 +76,68 @@ function ListingDetailsScreen({ route }) {
 
 const styles = StyleSheet.create({
   detailsContainer: {
-    padding: 13,
+   padding: 13,
   },
   image: {
+    flex:1,
     width: "100%",
     height: 300,
+    borderWidth: 3,
+    borderRadius: 15,
+    padding :50,
+    borderColor: '#FFFFFF',
+    elevation: 5,
   },
   price: {
-    color: colors.secondary,
+    color: '#25D366',
     fontWeight: "bold",
     fontSize: 20,
     marginVertical: 10,
   },
   title: {
-    fontSize: 24,
+    fontSize: 28,
     fontWeight: "600",
+    fontFamily:'SFProText-Regular',
+    color: '#696966',
+    paddingBottom: -5,
+    
+    
   },
   description:{
-    fontSize: 20,
+    fontSize: 17,
     fontWeight: "300",
+    fontFamily:'SFProText-Regular',
+    
+    fontStyle: 'italic',
+    backgroundColor:'#8A8A8F',
+    color: '#ffffff',
+    padding:12,
+    borderRadius:13, 
+  
   },
   userContainer: {
     marginVertical: 30,
   },
   rating:{
     marginBottom:100
+  },
+  category:{
+    fontSize: 13,
+    fontFamily:'Neue Helvetica',
+    backgroundColor: '#ff4d94',
+    color: '#ffffff',
+    padding:3,
+    borderRadius:7, 
+    alignSelf: 'flex-start'
+  },
+  pri:{
+    fontSize: 20,
+    color: '#666666'
+  },
+  btn:{
+    color: '#1DA1F2'
   }
+
 });
 
 export default ListingDetailsScreen;
