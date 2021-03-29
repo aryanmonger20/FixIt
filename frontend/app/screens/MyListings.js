@@ -22,6 +22,8 @@ function ListingsScreen({ navigation }) {
 
   const getListingsApi = useApi(listingsApi.getListings);
   const { user, logOut } = useAuth();
+  console.log("location is "+user.location);
+  const [number, updateNumber] = React.useState(0);
 
  
   const [filteredDataSource, setFilteredDataSource] = useState([]);
@@ -91,7 +93,8 @@ function ListingsScreen({ navigation }) {
           const handlePress = (userId) => {
             alert("Listing Deleted Succesfully")
             console.log("del")
-            client.post("/listings/delete", {userId})
+            client.post("/listings/delete", {userId});
+            (prevNum) => updateNumber(prevNum + 1);
           }
 
 

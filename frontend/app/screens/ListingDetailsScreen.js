@@ -43,7 +43,7 @@ function ListingDetailsScreen({ route }) {
         uri={listing.image}
       />
       <View style={styles.detailsContainer}>
-        <Text style={styles.title}>{listing.title}</Text>
+        {/* <Text style={styles.title}>{listing.title}</Text> */}
         {/* <Text style={styles.category}>{listing.categoryId}</Text> */}
         <Text style={styles.category}><MaterialIcons name="electrical-services" size={15} color="white" />{" "}{listing.categoryId}{" "}</Text>
         <Text style={styles.price}>₹{listing.price}<Text style={styles.pri}> / hour</Text></Text>
@@ -51,7 +51,7 @@ function ListingDetailsScreen({ route }) {
        
         {/* <Text style={styles.description}>{listing.contact}</Text> */}
 
-        <Text style={styles.pri}><Text style={styles.pri}>About :</Text></Text>
+        <Text style={styles.pri}><Text style={styles.pri}>About :{"\n"}</Text></Text>
         <Text style={styles.description}>{"\" "}{listing.description}{" \""}</Text>
         
 
@@ -81,17 +81,27 @@ const styles = StyleSheet.create({
   image: {
     flex:1,
     width: "100%",
-    height: 300,
+    height: 250,
     borderWidth: 3,
-    borderRadius: 15,
+    borderRadius: 20,
     padding :50,
     borderColor: '#FFFFFF',
-    elevation: 5,
+   // elevation: 5,
+    // flex: 1,
+    // height: 400, 
+    // width: "100%", 
+    // resizeMode: 'cover', 
+    // borderRadius: 20,
+    // padding :50,
+    // margin :10,
+    // marginRight :10
+
+
   },
   price: {
     color: '#25D366',
     fontWeight: "bold",
-    fontSize: 20,
+    fontSize: 25,
     marginVertical: 10,
   },
   title: {
@@ -113,6 +123,7 @@ const styles = StyleSheet.create({
     color: '#ffffff',
     padding:12,
     borderRadius:13, 
+    overflow: 'hidden',
   
   },
   userContainer: {
@@ -122,16 +133,17 @@ const styles = StyleSheet.create({
     marginBottom:100
   },
   category:{
-    fontSize: 13,
+    fontSize: 18,
     fontFamily:'Neue Helvetica',
     backgroundColor: '#ff4d94',
     color: '#ffffff',
     padding:3,
-    borderRadius:7, 
+    borderRadius: 7, 
+    overflow: 'hidden',
     alignSelf: 'flex-start'
   },
   pri:{
-    fontSize: 20,
+    fontSize: 18,
     color: '#666666'
   },
   btn:{

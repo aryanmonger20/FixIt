@@ -18,6 +18,7 @@ import WelcomeScreen from "./app/screens/WelcomeScreen";
 import LoginScreen from "./app/screens/LoginScreen";
 import RegisterScreen from "./app/screens/RegisterScreen";
 
+
 const AppStack = createStackNavigator();
 
 export default function App() {

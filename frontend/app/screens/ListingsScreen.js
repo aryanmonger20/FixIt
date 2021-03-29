@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { FlatList, StyleSheet, ScrollView, View } from "react-native";
+import {FlatList, StyleSheet, ScrollView, View } from "react-native";
 import { SearchBar } from 'react-native-elements';
 // import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
@@ -14,6 +14,10 @@ import AppText from "../components/Text";
 import useApi from "../hooks/useApi";
 import filter from 'lodash.filter';
 import useAuth from "../auth/useAuth"
+import FBSearchBar from "../utility/FBSearchBar";
+import RNPickerSelect from "react-native-picker-select";
+
+
 
 
 
@@ -132,6 +136,7 @@ const searchFilterFunction = (text) => {
     </View>
       
       <View style={styles.search}>
+      
         <SearchBar
           round
            lightTheme
@@ -173,7 +178,7 @@ const searchFilterFunction = (text) => {
             imageUrl={item.image}
             rating={item.rating}
             city={item.city}
-            onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
+            onPress={() => navigation.navigate(routes.LISTING_DETAILS,item)}
           />
           </>
         )}

@@ -8,10 +8,37 @@ import Ionicons from 'react-native-vector-icons'
 import { NavigationContainer } from "@react-navigation/native";
 import SearchBar from "../components/SearchBar";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import DropDownPicker from 'react-native-dropdown-picker';
+import RNPickerSelect from "react-native-picker-select";
+import Geocoder from 'react-native-geocoding';
+import location from "../hooks/useLocation"
+
+// Initialize the module (needs to be done only once)
+// use a valid API key
+
 
 const Stack = createStackNavigator();
 
-const FeedNavigator = (navigation) => (
+const FeedNavigator =(navigation) => {
+  Geocoder.init("AIzaSyBYDY2-tBAQr301NCKR_UE8E6hamyN8GdM"); 
+  const { user, logOut } = useAuth();
+  const uselocation = location();
+  console.log("below this")
+  console.log(uselocation);
+  var array;
+  if(!(uselocation === undefined))
+  {
+  array = Object.values(uselocation);
+  console.log(array)
+  // Geocoder.from(array[0],array[1])
+	// 	.then(json => {
+  //       		var addressComponent = json.results[0].address_components[0];
+	// 		console.log(addressComponent);
+	// 	})
+	// 	.catch(error => console.warn(error));
+  }
+  console.log(array)
+  return(
   <Stack.Navigator mode="modal">
     <Stack.Screen name="Listings" component={ListingsScreen}
       options={{
@@ -19,8 +46,9 @@ const FeedNavigator = (navigation) => (
         headerTitleAlign:"left",
         headerTitle: 
           <View >
-            <Text style={styles.headertitle}>Hello User</Text>
-            <Text style={styles.headertitle2}><MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/>Your Location</Text>
+            <Text style={styles.headertitle}>Hey {user.name}</Text>
+            <Text style={styles.headertitle2}><MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/>Amabala
+            </Text>
          
             
 
@@ -35,30 +63,34 @@ const FeedNavigator = (navigation) => (
           fontSize:15,
         },
         headerRight: () => (
-          <Button
-          onPress={() => navigation.navigate(routes.SEARCH)}
-            title='search'
-            
-            />
+          <View style={styles.container}>
+       </View>
             
             ),
           }}
+        
     />
          
-         <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} options={{
+         <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} options={({ route }) =>({
         HeaderShown: true,
-        headerTitle: 'ListingDetails',
+        headerTitle: route.params.title+" Gupta",
         headerStyle: {
           backgroundColor: '#0e6ebe',
         },
         headerTintColor: '#fff',
         headerTitleStyle: {
-          fontWeight: 'bold',
+          
+        fontWeight: '300',
+        color: '#ffffff',
+        fontFamily: 'Nunito-Regular',
+        fontSize: 28,
+        marginLeft: -25,
+        paddingLeft: -10
         },
         
-          }} />
+        })} />
   </Stack.Navigator>
-);
+)};
 
 export default FeedNavigator;
 
@@ -83,5 +115,13 @@ const styles = StyleSheet.create({
   },
   headericon:{
     color:"black",
-  }
+  },
+//   container : {
+//     flex            : .2,
+//     backgroundColor : "#fff",
+//     alignItems: 'center',
+//     width : 100,
+//     height : 100,
+   
+// },
 });
