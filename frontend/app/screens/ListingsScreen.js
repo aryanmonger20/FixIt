@@ -35,7 +35,7 @@ function ListingsScreen({ navigation ,useAuth}) {
   const [masterDataSource2, setMasterDataSource2] = useState([]);
 
   useEffect(() => {
-    fetch('http://192.168.1.6:9000/api/listings')
+    fetch('http://192.168.1.8:9000/api/listings')
       .then((response) => response.json())
       .then((responseJson) => {
         setFilteredDataSource(responseJson);

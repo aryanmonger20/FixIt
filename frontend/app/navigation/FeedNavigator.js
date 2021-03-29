@@ -46,7 +46,7 @@ const FeedNavigator =(navigation) => {
         headerTitleAlign:"left",
         headerTitle: 
           <View >
-            <Text style={styles.headertitle}>Hey {user.name}</Text>
+            <Text style={styles.headertitle}>Hey !! {user.name}</Text>
             <Text style={styles.headertitle2}><MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/>Amabala
             </Text>
          
@@ -73,7 +73,7 @@ const FeedNavigator =(navigation) => {
          
          <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} options={({ route }) =>({
         HeaderShown: true,
-        headerTitle: route.params.title+" Gupta",
+        headerTitle: route.params.title,
         headerStyle: {
           backgroundColor: '#0e6ebe',
         },
