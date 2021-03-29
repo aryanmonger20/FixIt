@@ -5,9 +5,10 @@ import {
   KeyboardAvoidingView,
   Platform,
   Keyboard,
-  ScrollView
+  ScrollView,
+  Image
 } from "react-native";
-import { Image } from "react-native-expo-image-cache";
+
 import Button from "../components/Button"
 import colors from "../config/colors";
 import ContactSellerForm from "../components/ContactSellerForm";
@@ -38,21 +39,30 @@ function ListingDetailsScreen({ route }) {
     >
       <Image
        style={styles.image}
-       //preview={{ uri: temp }}
+       preview={require('../assets/rating.png')} 
         tint="dark"
         uri={listing.image}
       />
       <View style={styles.detailsContainer}>
-        {/* <Text style={styles.title}>{listing.title}</Text> */}
+        
+        
+        <View style={{flexDirection:'row', flexWrap:'wrap',justifyContent: 'space-between'}}>
+          
+          <Text style={styles.title}>{listing.title}</Text>
+       
+        <Text style={styles.price}>₹{listing.price}<Text style={styles.pri}> / shift</Text>
+        </Text>
+        </View>
+        
         {/* <Text style={styles.category}>{listing.categoryId}</Text> */}
-        <Text style={styles.category}><MaterialIcons name="electrical-services" size={15} color="white" />{" "}{listing.categoryId}{" "}</Text>
-        <Text style={styles.price}>₹{listing.price}<Text style={styles.pri}> / hour</Text></Text>
+        <Text style={styles.category}><MaterialIcons name="electrical-services" size={20} color="white" />{" "}{listing.categoryId}{" "}</Text>
+        
        
        
         {/* <Text style={styles.description}>{listing.contact}</Text> */}
 
-        <Text style={styles.pri}><Text style={styles.pri}>About :{"\n"}</Text></Text>
-        <Text style={styles.description}>{"\" "}{listing.description}{" \""}</Text>
+        
+        <Text style={styles.description}><Text style={styles.pri}><Text style={styles.pri}>About :</Text></Text>{listing.description}</Text>
         
 
         
@@ -66,6 +76,13 @@ function ListingDetailsScreen({ route }) {
       <View style={styles.detailsContainer}>
       <ContactSellerForm contact={listing.contact} />
       </View>
+     <View style={styles.rat}>
+     <Image source={require('../assets/rating.png')} 
+  style={{ width: 200, height: 200 ,alignItems:"center"}}
+  />
+     </View>
+  
+
       <View style={styles.rating}>
           <Rating value={listing}/>
         </View>
@@ -78,6 +95,10 @@ const styles = StyleSheet.create({
   detailsContainer: {
    padding: 13,
   },
+  rat:{
+    alignItems:"center"
+  }
+ ,
   image: {
     flex:1,
     width: "100%",
@@ -107,21 +128,19 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 28,
     fontWeight: "600",
-    fontFamily:'SFProText-Regular',
+    fontFamily: Platform.OS === "android" ? "SFProText-Regular" : "Arial",
     color: '#696966',
-    paddingBottom: -5,
+    paddingBottom: 10,
     
     
   },
   description:{
     fontSize: 17,
     fontWeight: "300",
-    fontFamily:'SFProText-Regular',
-    
-    fontStyle: 'italic',
-    backgroundColor:'#8A8A8F',
-    color: '#ffffff',
-    padding:12,
+    fontFamily: Platform.OS === "android" ? "SFProText-Regular" : "Arial",
+   
+  
+    paddingTop:15,
     borderRadius:13, 
     overflow: 'hidden',
   
@@ -134,7 +153,9 @@ const styles = StyleSheet.create({
   },
   category:{
     fontSize: 18,
-    fontFamily:'Neue Helvetica',
+    fontFamily: Platform.OS === "android" ? "Neue Helvetica" : "Arial",
+
+    
     backgroundColor: '#ff4d94',
     color: '#ffffff',
     padding:3,

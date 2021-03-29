@@ -127,7 +127,7 @@ const searchFilterFunction = (text) => {
 
   return (
     <Screen style={styles.screen}>
-
+<ScrollView>
       
       <ActivityIndicator visible={getListingsApi.loading} />
 
@@ -173,7 +173,7 @@ const searchFilterFunction = (text) => {
         
           <Card
             title={item.title}
-            subTitle={"$" + item.price}
+            subTitle={"₹" + item.price}
             category={item.categoryId}
             imageUrl={item.image}
             rating={item.rating}
@@ -183,6 +183,7 @@ const searchFilterFunction = (text) => {
           </>
         )}
       />
+      </ScrollView>
     </Screen>
   );
 }

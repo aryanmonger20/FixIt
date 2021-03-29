@@ -13,28 +13,27 @@ export const addListing = (listing, onUploadProgress) => {
   var temp = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1615&q=80';
   //console.log(listing.category.label);
   if (listing.category.label === 'Plumber') {
-    temp = 'https://images.unsplash.com/photo-1538474705339-e87de81450e8?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
+    temp = 'https://www.procore.com/jobsite/wp-content/uploads/2019/08/1d6285_8b2cacbb98364385ae5f10ec397a9bac_mv2.gif'
   }
   else if (listing.category.label === 'Carpenter') {
     temp = 'https://images.unsplash.com/photo-1561297331-a9c00b9c2c44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
   }
   else if (listing.category.label === 'Mechanic') {
-    temp = 'https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2009&q=80';
+    temp = 'https://cdn.dribbble.com/users/2221597/screenshots/11933222/media/c7bff7d4fa3f4befecb1cd1ae87c08ae.gif';
   }
   else if (listing.category.label === 'Cameraman') {
-    temp = 'https://images.unsplash.com/photo-1512790182412-b19e6d62bc39?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=2089&q=80';
-  }
+    temp = 'https://i.pinimg.com/originals/ca/db/6c/cadb6cb33aca65a9966824447b7ad940.gif'}
   else if (listing.category.label === 'Maid') {
-    temp = 'https://images.unsplash.com/photo-1559308078-88465deb35cc?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
+    temp = 'https://www.w-p.co.uk/hubfs/services.gif'
   }
   else if (listing.category.label === 'Electrician') {
-    temp = 'https://images.unsplash.com/photo-1555963966-b7ae5404b6ed?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
+    temp = 'https://media.istockphoto.com/vectors/vector-electircian-repairing-socket-flat-design-vector-id959020120?k=6&m=959020120&s=612x612&w=0&h=JB5iAFFQpBaJUr9UqF8dlK1Bm_ISS2hPtmXt81zcpm0='
   }
   else if (listing.category.label === 'Musician') {
-    temp = 'https://images.unsplash.com/photo-1507838153414-b4b713384a76?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
+    temp = 'https://cdn.dribbble.com/users/1774872/screenshots/5506400/singer3-dr.gif'
   }
   else if (listing.category.label === 'Tutor') {
-    temp = 'https://images.unsplash.com/photo-1550399105-c4db5fb85c18?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1951&q=80';
+    temp = 'https://i.pinimg.com/originals/bb/0c/c7/bb0cc783196fa9b2119864ff90eb5702.gif'
   }
   else if (listing.category.label === 'Painter') {
     temp = 'https://images.unsplash.com/photo-1563898058033-94d26a68166f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2850&q=80';

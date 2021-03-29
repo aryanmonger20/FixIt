@@ -28,7 +28,7 @@ function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl ,category,ratin
          <View style={{flexDirection:'row', flexWrap:'wrap' ,justifyContent: 'space-between'}}>
          
          <Text style={styles.subTitle} numberOfLines={2}>
-        {subTitle}
+         {subTitle}
           </Text>
           <Text style={styles.city} numberOfLines={1}>
           <Entypo name="location-pin" size={16} color="black" /> {city}
@@ -46,6 +46,7 @@ function Card({ title, subTitle, imageUrl, onPress, thumbnailUrl ,category,ratin
 
 const styles = StyleSheet.create({
   card: {
+    
     flex:1,
     flexDirection:"row",
     borderBottomEndRadius: 10,
@@ -86,7 +87,7 @@ const styles = StyleSheet.create({
   subTitle: {
     color: colors.secondary,
     fontWeight: "bold",
-    fontSize:19
+    fontSize:18
   },
   title: {
     marginBottom: 7,
