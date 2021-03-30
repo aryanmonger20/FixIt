@@ -17,8 +17,8 @@
      <td>Login Page</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REG.jpeg" width=500 height=650></td>
-    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/LOGIN.jpeg" width=500 height=650></td> 
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REG.jpeg" width=300 height=650></td>
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/LOGIN.jpeg" width=300 height=650></td> 
   </tr>
  </table>
  
@@ -59,13 +59,14 @@ AFTER SEEING RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
 
    
 
-    [GOOGLE FONTS](https://fonts.google.com/)
     
     [GOOGLE PLACE API](https://developers.google.com/maps/documentation/geocoding/overview)
 
-    [GOOGLE SEARCH AUTOCOMPLETE](https://rapidapi.com/apigeek/api/google-search3?utm_source=google&utm_medium=cpc&utm_campaign=Beta&utm_term=%2Bgoogle%20%2Bsearch%20%2Bapi_b&gclid=Cj0KCQjwmIuDBhDXARIsAFITC_6WNJqbgIZkMEpWfkGLo2cIHOKgelVVuyClnPziqzF21thp-aDk3BcaAkv4EALw_wcB)
-    + It will autocomplete the searching places by google
-    - Autocomplete searching pesons or workers in the app.
+    [GOOGLE SEARCH AUTOCOMPLETE](https://developers.google.com/maps/documentation/places/web-service/autocomplete)
+    
+    [GOOGLE FONTS](https://fonts.google.com/)
+    
+   
 
 + Other technologies
 
