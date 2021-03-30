@@ -87,11 +87,12 @@ npm install
 Then, in the "backend/functions" directory, start the backend server using the following command:
 ```
 First go to Backend Directory
+cd backend
 npm install nodemon
 npm index.js
 ```
 
-Contributing to the project:
+## Contributing to the project:
 Pull requests / bug reports are welcome :)
 
 Please refer to the project's style and naming conventions for submitting patches and additions. In general, we follow the "fork-and-pull" Git workflow.
