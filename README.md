@@ -1,5 +1,5 @@
 # FIXIT  <img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/logo.png" width="50" height="50">
-#### As the word sounds that it will fix something,and yes you r right,It will fix all your needs which  a person can require sometimes in their livinighood!
+
 
 ---
 ### Project for [DSC Solution Challenge 2021](https://developers.google.com/community/dsc-solution-challenge "DSC Solution Challange 2021")
