@@ -1,5 +1,5 @@
-# FIXIT  <img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/logo.png" width="50" height="50">
-### We all know that it is very irritating or sometimes very difficult for us to find a plumber or a electrician or a mechanic or a maid or many more working professionals  on time in our nearby areas,,To resolved this problem here we are representing our App Fixit.
+# FIXIT  <img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/logo.png" width="30" height="30">
+### We all know that it is very irritating or sometimes very difficult for us to find a plumber or a electrician or a maid or many more working professionals  on time in our nearby areas.To resolve this problem  we are representing our App Fixit.
 
 ---
 ### Project for [DSC Solution Challenge 2021](https://developers.google.com/community/dsc-solution-challenge "DSC Solution Challange 2021")
@@ -7,7 +7,7 @@
 ### Our moto is to deliver best service in your nearby areas  by seeing their rating and review 
 #### Any valid user can login in their app and they can add some known working professionals in their list,and they will appeae in the app.
 ### WELCOME PAGE :-
-![REGISTER](https://user-images.githubusercontent.com/57488430/113031819-c6c2f500-91ac-11eb-9b13-a44b722db9f6.jpeg)
+![REGISTER|512x397,20%](https://user-images.githubusercontent.com/57488430/113031819-c6c2f500-91ac-11eb-9b13-a44b722db9f6.jpeg)
 
 ### REGISTRATION AND LOGIN PAGE :-
 
@@ -27,6 +27,7 @@
 #### WORKING OF PROJECT:-
 ###### The working of this aap is very easy and It is also very easy for Any consumer to make contacts with working professionals and get their services at home in very less amount without any problem!
 ![REGISTERPEIOPLE](https://user-images.githubusercontent.com/57488430/113032790-df7fda80-91ad-11eb-8355-4fc905fb333a.jpeg)
+
 ![CONTACT](https://user-images.githubusercontent.com/57488430/113032827-edcdf680-91ad-11eb-89ab-65915b373e59.jpeg)
 
 ##### It will help consumer to directly contact the person with their own , it will be easy for consumers to contact for their service and it will also help for worker to get their work and make their economic growth.
