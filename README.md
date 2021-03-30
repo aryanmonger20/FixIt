@@ -76,6 +76,9 @@ First of all, install the dependencies by running the following command in "fron
 `code`
 
 ```
+First go to the Frontend Directory
+cd frontend
+Then give this command
 npm install
 ```
 ```
@@ -83,6 +86,7 @@ npm install
 ```
 Then, in the "backend/functions" directory, start the backend server using the following command:
 ```
+First go to Backend Directory
 npm install nodemon
 npm index.js
 ```
