@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { ScrollView, StyleSheet ,Text} from "react-native";
+import { ScrollView, StyleSheet ,Text,Image,View,KeyboardAvoidingView} from "react-native";
 import * as Yup from "yup";
 
 import {
@@ -120,12 +120,20 @@ function ListingEditScreen() {
   return (
     <Screen style={styles.container}>
       <ScrollView>
+        <KeyboardAvoidingView
+        behavior={Platform.OS === "ios" ? "padding" : "height"}
+        style={styles.container2}>
       <UploadScreen
         onDone={() => setUploadVisible(false)}
         progress={progress}
         visible={uploadVisible}
       />
-      <Text style={styles.contact}>Registration From For Workers!!</Text>
+        <View style={{flexDirection:'row', flexWrap:'wrap',margin:15}}>
+        <Image source={require('../assets/regpage.png')} 
+  style={{ width: 80, height: 80 ,alignItems:"center"}}
+  />
+      <Text style={styles.contact}>Register Here</Text></View>
+      
       <Form
         initialValues={{
           id:users.id,
@@ -182,6 +190,7 @@ function ListingEditScreen() {
         />
         <SubmitButton  title="Post" />
       </Form>
+      </KeyboardAvoidingView>
       </ScrollView>
     </Screen>
   );
@@ -190,22 +199,25 @@ function ListingEditScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
-    backgroundColor:"#499cf5"
+    backgroundColor: "white"
   },
   contact:{
-    padding:15,
-    fontSize:22,
-    color:colors.white,
-    fontWeight:"600",
-    textShadowOffset:{width:10,height:10},
+    padding:10,
+    fontSize:40,
+    color:'#0e6ebe',
+    fontWeight:"bold",
+   
    //fontFamily:"Roboto",
-    textShadowRadius:10
+   
 
   },
   name: {
-    elevation:10,
+   // elevation:10,
     borderRadius:6,
     borderColor:"#0c0c0c"
+  },
+  container2: {
+    flex: 1
   },
  
 });

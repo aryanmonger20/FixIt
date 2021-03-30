@@ -33,10 +33,7 @@ function ListingDetailsScreen({ route }) {
 
   return (
     <ScrollView>
-    <KeyboardAvoidingView
-      behavior="position"
-      keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
-    >
+   
       <Image2
        style={styles.image}
        //preview={require('../assets/rating.png')} 
@@ -87,7 +84,7 @@ function ListingDetailsScreen({ route }) {
       <View style={styles.rating}>
           <Rating value={listing}/>
         </View>
-    </KeyboardAvoidingView>
+    
     </ScrollView>
   );
 }
@@ -108,7 +105,16 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     padding :50,
     borderColor: '#FFFFFF',
-   
+   // elevation: 5,
+    // flex: 1,
+    // height: 400, 
+    // width: "100%", 
+    // resizeMode: 'cover', 
+    // borderRadius: 20,
+    // padding :50,
+    // margin :10,
+    // marginRight :10
+
 
   },
   price: {
@@ -130,6 +136,8 @@ const styles = StyleSheet.create({
     fontSize: 17,
     fontWeight: "300",
     fontFamily: Platform.OS === "android" ? "SFProText-Regular" : "Arial",
+   
+  
     paddingTop:15,
     borderRadius:13, 
     overflow: 'hidden',

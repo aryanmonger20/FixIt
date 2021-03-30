@@ -58,7 +58,8 @@ export default function App(cont) {
      
         <Button 
         title="Send Message Via WhatsApp"
-        onPress={sendMsg}></Button>
+        onPress={sendMsg}
+        color="wht"></Button>
         
       
     </View>
