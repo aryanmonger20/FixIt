@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import {FlatList, StyleSheet, ScrollView, View } from "react-native";
+import {FlatList, StyleSheet, ScrollView, View ,Image} from "react-native";
 import { SearchBar } from 'react-native-elements';
 // import { GooglePlacesAutocomplete } from 'react-native-google-places-autocomplete';
 
@@ -128,7 +128,12 @@ const searchFilterFunction = (text) => {
   return (
     <Screen style={styles.screen}>
 <ScrollView>
-      
+  <View style={{backgroundColor:"#0e6ebe"}}>
+  <Image
+      source={require('../assets/top.jpg')}
+      style={styles.image}/>
+  </View>
+     
       <ActivityIndicator visible={getListingsApi.loading} />
 
       <View style={styles.search}>
@@ -190,9 +195,20 @@ const searchFilterFunction = (text) => {
 
 const styles = StyleSheet.create({
   screen: {
-    padding: 1,
+   // padding: 1,
     backgroundColor: colors.light,
   },
+  image:{
+    width: 150,
+     height: 60 ,
+     paddingTop:10,
+     marginTop:10,
+     borderRadius:20,
+     alignSelf:"center",
+     backgroundColor:"#0e6ebe"
+    
+  }
+  ,
   search: {
 
     // paddingTop: 1,

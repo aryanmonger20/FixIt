@@ -78,7 +78,7 @@ function ListingDetailsScreen({ route }) {
       </View>
      <View style={styles.rat}>
        
-     <Image source={require('../assets/rating.png')} 
+    <Image source={require('../assets/rating.png')} 
   style={{ width: 200, height: 200 ,alignItems:"center"}}
   />
      </View>

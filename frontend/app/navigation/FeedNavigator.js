@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { View, Text, Button, StyleSheet } from 'react-native'
 import { createStackNavigator } from "@react-navigation/stack";
 import ListingsScreen from "../screens/ListingsScreen";
@@ -12,6 +12,9 @@ import DropDownPicker from 'react-native-dropdown-picker';
 import RNPickerSelect from "react-native-picker-select";
 import Geocoder from 'react-native-geocoding';
 import location from "../hooks/useLocation"
+import colors from "../config/colors"
+import { EvilIcons } from '@expo/vector-icons';
+import { FontAwesome } from '@expo/vector-icons'; 
 
 // Initialize the module (needs to be done only once)
 // use a valid API key
@@ -21,6 +24,9 @@ const Stack = createStackNavigator();
 
 const FeedNavigator =(navigation) => {
   Geocoder.init("AIzaSyBYDY2-tBAQr301NCKR_UE8E6hamyN8GdM"); 
+  var city="India";
+  const [City, updateCity] = useState("Bharat");
+  console.log(City)
   const { user, logOut } = useAuth();
   const uselocation = location();
   console.log("below this")
@@ -29,66 +35,78 @@ const FeedNavigator =(navigation) => {
   if(!(uselocation === undefined))
   {
   array = Object.values(uselocation);
-  console.log(array)
+  console.log(array[0])
   // Geocoder.from(array[0],array[1])
 	// 	.then(json => {
   //       		var addressComponent = json.results[0].address_components[0];
 	// 		console.log(addressComponent);
 	// 	})
 	// 	.catch(error => console.warn(error));
+  var url='https://reverse.geocoder.ls.hereapi.com/6.2/reversegeocode.json?prox='+array[0]+'%2C'+array[1]+'&mode=retrieveAddresses&maxresults=1&gen=9&apiKey=h3zNh8NS55Qi1JtJZRtCuaBRC4SaZvlmpbMcdqi8djU';
+  console.log(url);
+  fetch(url)
+  .then((response) => response.json())
+  .then((responseJson) => {
+    console.log(responseJson.Response.View[0].Result[0].Location.Address.City)
+    city=responseJson.Response.View[0].Result[0].Location.Address.City;
+    updateCity(city);
+    
+   
+    
   }
-  console.log(array)
+  )
+  
+  }
+  //onsole.log(array)
   return(
   <Stack.Navigator mode="modal">
+
     <Stack.Screen name="Listings" component={ListingsScreen}
       options={{
         headerShown: true,
         headerTitleAlign:"left",
         headerTitle: 
           <View >
-            <Text style={styles.headertitle}>Hey !! {user.name}</Text>
-            <Text style={styles.headertitle2}><MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/>Amabala
-            </Text>
-         
-            
-
+            <Text style={styles.headertitle}><FontAwesome name="user" size={18} color="white" /> Hey !! {user.name.split(" ")[0]}</Text>
           </View>
          ,
         headerStyle: {
-          backgroundColor: '#0e6ebe',
+          backgroundColor:"#0e6ebe",
+          margin:0,
         },
-        headerTintColor: '#fff',
-        headerTitleStyle: {
-          fontStyle: 'italic',
-          fontSize:15,
-        },
+        // headerTintColor: '#fff',
+        // headerTitleStyle: {
+        //   fontStyle: 'italic',
+        //   fontSize:18,
+        // },
         headerRight: () => (
-          <View style={styles.container}>
-       </View>
-            
+          <Text style={styles.headertitle2}><MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/> {City}
+            </Text>
             ),
           }}
         
     />
-         
-         <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} options={({ route }) =>({
+           
+           <Stack.Screen name="ListingDetails" component={ListingDetailsScreen} 
+           options={({ route }) =>({
         HeaderShown: true,
-        headerTitle: route.params.title,
+        //headerTitle: route.params.title,
         headerStyle: {
-          backgroundColor: '#0e6ebe',
+          backgroundColor: colors.light,
         },
-        headerTintColor: '#fff',
+        headerTintColor: '',
         headerTitleStyle: {
           
-        fontWeight: '300',
-        color: '#ffffff',
-        fontFamily: 'Nunito-Regular',
-        fontSize: 28,
-        marginLeft: -25,
+        fontWeight: '400',
+        color: "#77797A",
+       
+        fontSize: 20,
+        
         paddingLeft: -10
         },
         
         })} />
+
   </Stack.Navigator>
 )};
 
@@ -100,18 +118,20 @@ const styles = StyleSheet.create({
     padding:5,
   },
   headertitle:{
-    color:"white",
+    color: colors.light,
     alignItems:"flex-start",
-    marginLeft:18,
+    marginLeft:1,
+
     fontSize:15,
   },
   headertitle2:{
-    color:"white",
-    fontSize:15,
+    color:colors.black,
+    fontSize:16,
     alignItems:"flex-start",
     marginTop:5,
-    marginLeft:0,
-    marginBottom:5
+    marginRight:10,
+    //marginBottom:5,
+    fontWeight:"500"
   },
   headericon:{
     color:"black",

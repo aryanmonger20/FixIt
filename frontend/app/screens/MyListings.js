@@ -128,9 +128,10 @@ function ListingsScreen({ navigation }) {
           <Swipeout {...swipeSettings} backgroundColor="transparent" style={styles.btn}>
           <Card
             title={item.title}
-            subTitle={"$" + item.price}
+            subTitle={"₹" + item.price}
             category={item.categoryId}
             imageUrl={item.image}
+            city={item.city}
             onPress={() => navigation.navigate(routes.LISTING_DETAILS, item)}
           />
           </Swipeout>);
