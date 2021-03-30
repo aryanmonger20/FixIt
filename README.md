@@ -39,15 +39,16 @@ FROM RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
 
 
 + [REACT NATIVE](https://reactnative.dev/)
++ [EXPO](https://expo.io/)
 
 
 + GOOGLE TECHNOLOGIES  
 
-   [GOOGLE MAP](https://www.google.com/maps)
+   
 
     [GOOGLE FONTS](https://fonts.google.com/)
     
-    [GEOCODING API BY GOOGLE SEARCH](https://developers.google.com/maps/documentation/geocoding/overview)
+    [GOOGLE PLACE API](https://developers.google.com/maps/documentation/geocoding/overview)
 
     [GOOGLE SEARCH AUTOCOMPLETE](https://rapidapi.com/apigeek/api/google-search3?utm_source=google&utm_medium=cpc&utm_campaign=Beta&utm_term=%2Bgoogle%20%2Bsearch%20%2Bapi_b&gclid=Cj0KCQjwmIuDBhDXARIsAFITC_6WNJqbgIZkMEpWfkGLo2cIHOKgelVVuyClnPziqzF21thp-aDk3BcaAkv4EALw_wcB)
     + It will autocomplete the searching places by google
