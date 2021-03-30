@@ -17,8 +17,8 @@
      <td>Login Page</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REG.jpeg" width=400 height=600></td>
-    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/LOGIN.jpeg" width=400 height=600></td> 
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REG.jpeg" width=500 height=650></td>
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/LOGIN.jpeg" width=500 height=650></td> 
   </tr>
  </table>
  
