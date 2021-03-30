@@ -1,7 +1,9 @@
-## FIXIT : As the word sounds that it will fix something,and yes you r right,It will fix all your needs which  a person can require sometimes in their livinighood!
+# FIXIT  <img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/logo.png" width="50" height="50">
+#### As the word sounds that it will fix something,and yes you r right,It will fix all your needs which  a person can require sometimes in their livinighood!
 
 ---
-
+### Project for [DSC Solution Challenge 2021](https://developers.google.com/community/dsc-solution-challenge "DSC Solution Challange 2021")
+#### By Team WHAT_THE_BUG
 ### Our moto is to deliver best service in your nearby areas  by seeing their rating and review 
 #### Any valid user can login in their app and they can add some known working professionals in their list,and they will appeae in the app.
 ### REGISTRATION PAGE :-
@@ -10,7 +12,7 @@
 ### LOGIN PAGE :-
 ![LOGIN](https://user-images.githubusercontent.com/57488430/113032006-fbcf4780-91ac-11eb-82b3-f1f5ac089628.jpeg)
 #### Consumer can make contact with him or do whatsapp him and tell him what they require from him
-### WORKING OF PROJECT:-
+#### WORKING OF PROJECT:-
 ###### The working of this aap is very easy and It is also very easy for Any consumer to make contacts with working professionals and get their services at home in very less amount without any hireachy or worderning!
 ![REGISTERPEIOPLE](https://user-images.githubusercontent.com/57488430/113032790-df7fda80-91ad-11eb-8355-4fc905fb333a.jpeg)
 ![CONTACT](https://user-images.githubusercontent.com/57488430/113032827-edcdf680-91ad-11eb-89ab-65915b373e59.jpeg)
@@ -31,16 +33,17 @@ FROM RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
 
 
 
-## Technology used
+## TECHNOLOGIES USED
 
- 
+  
 
 
 + [REACT NATIVE](https://reactnative.dev/)
 
 
 + GOOGLE TECHNOLOGIES  
-  - [GOOGLE MAP](https://www.google.com/maps)
+
+   [GOOGLE MAP](https://www.google.com/maps)
 
     [GOOGLE FONTS](https://fonts.google.com/)
     
@@ -50,7 +53,7 @@ FROM RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
     + It will autocomplete the searching places by google
     - Autocomplete searching pesons or workers in the app.
 
-+ More Technologies
++ Other technologies
 
     [Express](https://expressjs.com/)
 
@@ -61,8 +64,8 @@ FROM RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
      [FORMIK](https://formik.org/)
 
     [ApiSauce](https://www.npmjs.com/package/apisauce)
-    
-    [MaterialUi](https://material-ui.com/)
+
+    [MaterialUI](https://material-ui.com/)
 
 
 ## Code
