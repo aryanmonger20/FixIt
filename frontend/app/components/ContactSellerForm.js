@@ -3,6 +3,7 @@ import React, { useState, useEffect } from 'react';
 import { Form, FormField, SubmitButton } from "./forms";
 import { Keyboard } from "react-native";
 import * as Notifications from 'expo-notifications'
+import { FontAwesome } from '@expo/vector-icons'; 
 
 import { Alert, View, StyleSheet, Text, Linking, TextInput, TouchableOpacity } from 'react-native';
 import Button from "../components/Button"
@@ -40,6 +41,7 @@ export default function App(cont) {
 
       
     >
+     
       <FormField
         maxLength={255}
         multiline
@@ -53,7 +55,7 @@ export default function App(cont) {
       />
       </Form>
 
-       
+     
         <Button 
         title="Send Message Via WhatsApp"
         onPress={sendMsg}></Button>

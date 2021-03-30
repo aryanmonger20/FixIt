@@ -4,19 +4,16 @@ const endpoint = "/listings";
 
 const User =  authStorage.getUser();
 const getListings = () => client.get(endpoint);
-//console.log(getListings);
-//---//
 
-
-//--//
 export const addListing = (listing, onUploadProgress) => {
-  var temp = 'https://images.unsplash.com/photo-1594322436404-5a0526db4d13?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1615&q=80';
+  var temp = 'https://cdn.dribbble.com/users/3008811/screenshots/7090670/media/5a61f4778d6a527572a773c1f69001b8.gif';
   //console.log(listing.category.label);
   if (listing.category.label === 'Plumber') {
     temp = 'https://www.procore.com/jobsite/wp-content/uploads/2019/08/1d6285_8b2cacbb98364385ae5f10ec397a9bac_mv2.gif'
   }
   else if (listing.category.label === 'Carpenter') {
-    temp = 'https://images.unsplash.com/photo-1561297331-a9c00b9c2c44?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
+    temp = 'https://www.customerservicecenterjaipur.com/images/carpentry-medium_1.gif';
+  
   }
   else if (listing.category.label === 'Mechanic') {
     temp = 'https://cdn.dribbble.com/users/2221597/screenshots/11933222/media/c7bff7d4fa3f4befecb1cd1ae87c08ae.gif';
@@ -27,7 +24,7 @@ export const addListing = (listing, onUploadProgress) => {
     temp = 'https://www.w-p.co.uk/hubfs/services.gif'
   }
   else if (listing.category.label === 'Electrician') {
-    temp = 'https://media.istockphoto.com/vectors/vector-electircian-repairing-socket-flat-design-vector-id959020120?k=6&m=959020120&s=612x612&w=0&h=JB5iAFFQpBaJUr9UqF8dlK1Bm_ISS2hPtmXt81zcpm0='
+    temp = 'https://www.solutionspick.com/wp-content/uploads/2017/04/Electrician.gif'
   }
   else if (listing.category.label === 'Musician') {
     temp = 'https://cdn.dribbble.com/users/1774872/screenshots/5506400/singer3-dr.gif'
@@ -36,10 +33,10 @@ export const addListing = (listing, onUploadProgress) => {
     temp = 'https://i.pinimg.com/originals/bb/0c/c7/bb0cc783196fa9b2119864ff90eb5702.gif'
   }
   else if (listing.category.label === 'Painter') {
-    temp = 'https://images.unsplash.com/photo-1563898058033-94d26a68166f?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2850&q=80';
+    temp = 'https://cdn.dribbble.com/users/2124038/screenshots/4216556/boyaci_800_600.gif';
   }
   else if (listing.category.label === 'Other') {
-    temp = 'https://images.unsplash.com/photo-1602843080016-7872abf0ea68?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80';
+    temp = 'https://cdn.dribbble.com/users/3008811/screenshots/7090670/media/5a61f4778d6a527572a773c1f69001b8.gif'
   }
 //console.log(temp)
   
