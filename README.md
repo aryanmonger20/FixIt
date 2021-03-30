@@ -25,7 +25,7 @@
  
 #### Consumer can make contact with him or do whatsapp him and tell him what they require from him
 #### WORKING OF PROJECT:-
-###### The working of this aap is very easy and It is also very easy for Any consumer to make contacts with working professionals and get their services at home in very less amount without any hireachy or worderning!
+###### The working of this aap is very easy and It is also very easy for Any consumer to make contacts with working professionals and get their services at home in very less amount without any problem!
 ![REGISTERPEIOPLE](https://user-images.githubusercontent.com/57488430/113032790-df7fda80-91ad-11eb-8355-4fc905fb333a.jpeg)
 ![CONTACT](https://user-images.githubusercontent.com/57488430/113032827-edcdf680-91ad-11eb-89ab-65915b373e59.jpeg)
 
