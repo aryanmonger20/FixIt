@@ -1,5 +1,5 @@
 # FIXIT  <img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/logo.png" width="50" height="50">
-
+### We all know that it is very irritating or sometimes very difficult for us to find a plumber or a electrician or a mechanic or a maid or many more working professionals  on time in our nearby areas,,To resolved this problem here we are representing our App Fixit.
 
 ---
 ### Project for [DSC Solution Challenge 2021](https://developers.google.com/community/dsc-solution-challenge "DSC Solution Challange 2021")
