@@ -6,7 +6,7 @@
 #### By Team WHAT_THE_BUG
 ### Our moto is to deliver best service in your nearby areas  by seeing their rating and review 
 #### Any valid user can login in their app and they can add some known working professionals in their list,and they will appeae in the app.
-### REGISTRATION PAGE :-
+### WELCOME PAGE :-
 ![REGISTER](https://user-images.githubusercontent.com/57488430/113031819-c6c2f500-91ac-11eb-9b13-a44b722db9f6.jpeg)
 
 ### LOGIN PAGE :-
@@ -18,7 +18,8 @@
 ![CONTACT](https://user-images.githubusercontent.com/57488430/113032827-edcdf680-91ad-11eb-89ab-65915b373e59.jpeg)
 
 ##### It will help consumer to directly contact the person with their own , it will be easy for consumers to contact for their service and it will also help for worker to get their work and make their economic growth.
-FROM RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
+### RATING 
+AFTER SEEING RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
 
 ![RATING](https://user-images.githubusercontent.com/57488430/113032989-1f46c200-91ae-11eb-9f7a-7dfc748c171f.jpeg)
 
