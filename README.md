@@ -10,10 +10,8 @@
 ![REGISTER](https://user-images.githubusercontent.com/57488430/113031819-c6c2f500-91ac-11eb-9b13-a44b722db9f6.jpeg)
 
 ### REGISTRATION AND LOGIN PAGE :-
-<p float="left">
-<img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/LOGIN.jpeg" width="400" height="500" />
-  <img scr="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REG.jpeg" width="400" height="500" />
-  </p>
+![REG](https://user-images.githubusercontent.com/57488430/113045099-0ba25800-91bc-11eb-99a0-b6ed504f66a4.jpeg)
+![LOGIN](https://user-images.githubusercontent.com/57488430/113032006-fbcf4780-91ac-11eb-82b3-f1f5ac089628.jpeg)
 
 #### Consumer can make contact with him or do whatsapp him and tell him what they require from him
 #### WORKING OF PROJECT:-
