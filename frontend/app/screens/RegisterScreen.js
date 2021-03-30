@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet } from "react-native";
+import { ImageBackground, StyleSheet, View } from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
@@ -53,7 +53,14 @@ function RegisterScreen() {
   return (
     <>
       <ActivityIndicator visible={registerApi.loading || loginApi.loading} />
+      
       <Screen style={styles.container}>
+
+      <ImageBackground
+      style={styles.background}
+      source={require("../assets/reg.png")}
+      >
+        <View style={styles.login}>
         <Form
           initialValues={{ name: "", email: "", password: "" }}
           onSubmit={handleSubmit}
@@ -86,6 +93,8 @@ function RegisterScreen() {
           />
           <SubmitButton title="Register" />
         </Form>
+        </View>
+        </ImageBackground>
       </Screen>
     </>
   );
@@ -94,7 +103,23 @@ function RegisterScreen() {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    flex:1
+  },background: {
+    flex: 1,
+   
+    alignItems: "center",
+    
+    // backgroundColor:"white",
   },
+  login:{
+    flex:1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
+    marginTop:50
+  },
+
+
 });
 
 export default RegisterScreen;

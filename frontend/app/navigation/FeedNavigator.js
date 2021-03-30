@@ -59,7 +59,9 @@ const FeedNavigator =(navigation) => {
   }
   //onsole.log(array)
   return(
+    
   <Stack.Navigator mode="modal">
+
 
     <Stack.Screen name="Listings" component={ListingsScreen}
       options={{
@@ -70,9 +72,11 @@ const FeedNavigator =(navigation) => {
             <Text style={styles.headertitle}><FontAwesome name="user" size={18} color="white" /> Hey !! {user.name.split(" ")[0]}</Text>
           </View>
          ,
+         
         headerStyle: {
           backgroundColor:"#0e6ebe",
-          margin:0,
+          shadowColor:"transparent"
+         
         },
         // headerTintColor: '#fff',
         // headerTitleStyle: {
@@ -125,7 +129,7 @@ const styles = StyleSheet.create({
     fontSize:15,
   },
   headertitle2:{
-    color:colors.black,
+    color:colors.light,
     fontSize:16,
     alignItems:"flex-start",
     marginTop:5,

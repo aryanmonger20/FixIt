@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyleSheet, Image } from "react-native";
+import { StyleSheet, Image ,ImageBackground,View} from "react-native";
 import * as Yup from "yup";
 
 import Screen from "../components/Screen";
@@ -32,8 +32,13 @@ function LoginScreen(props) {
 
   return (
     <Screen style={styles.container}>
-      <Image style={styles.logo} source={require("../assets/logo.png")} />
-
+       <ImageBackground
+      //blurRadius={3}
+      style={styles.background}
+      source={require("../assets/login.png")}
+    >
+      {/* <Image style={styles.logo} source={require("../assets/top.jpg")} /> */}
+        <View style={styles.login}>
       <Form
         initialValues={{ email: "", password: "" }}
         onSubmit={handleSubmit}
@@ -63,6 +68,8 @@ function LoginScreen(props) {
         />
         <SubmitButton title="Login" />
       </Form>
+      </View>
+      </ImageBackground>
     </Screen>
   );
 }
@@ -70,13 +77,27 @@ function LoginScreen(props) {
 const styles = StyleSheet.create({
   container: {
     padding: 10,
+    
+  },login:{
+    flex:1,
+    justifyContent: "center",
+    alignItems: "center",
+    width: "100%",
   },
   logo: {
-    width: 80,
+    width: 200,
     height: 80,
     alignSelf: "center",
     marginTop: 50,
     marginBottom: 20,
+
+  },
+  background: {
+    flex: 1,
+   
+    alignItems: "center",
+    
+    // backgroundColor:"white",
   },
 });
 

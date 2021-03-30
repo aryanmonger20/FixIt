@@ -8,12 +8,12 @@ import colors from '../config/colors';
 function WelcomeScreen({ navigation }) {
   return (
     <ImageBackground
-      blurRadius={3}
+      //blurRadius={3}
       style={styles.background}
-      source={require("../assets/blue.jpeg")}
+      source={require("../assets/blue.png")}
     >
       <View style={styles.logoContainer}>
-        <Image style={styles.logo} source={require("../assets/logo.png")} />
+        <Image style={styles.logo} source={require("../assets/top.jpg")} />
         <Text style={styles.tagline}>Find What You Need</Text>
       </View>
       <View style={styles.buttonsContainer}>
@@ -37,6 +37,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: "flex-end",
     alignItems: "center",
+    
     // backgroundColor:"white",
   },
   buttonsContainer: {
@@ -45,8 +46,9 @@ const styles = StyleSheet.create({
     //backgroundColor:colors.medium,
   },
   logo: {
-    width: 100,
-    height: 100,
+    width: 300,
+    height: 80,
+    marginTop:20
   },
   logoContainer: {
     position: "absolute",

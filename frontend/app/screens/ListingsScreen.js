@@ -126,14 +126,16 @@ const searchFilterFunction = (text) => {
 
 
   return (
+    
     <Screen style={styles.screen}>
+      
 <ScrollView>
-  <View style={{backgroundColor:"#0e6ebe"}}>
+  
+<View style={{backgroundColor:"#0e6ebe"}}>
   <Image
       source={require('../assets/top.jpg')}
       style={styles.image}/>
   </View>
-     
       <ActivityIndicator visible={getListingsApi.loading} />
 
       <View style={styles.search}>
@@ -146,7 +148,7 @@ const searchFilterFunction = (text) => {
           round
            lightTheme
          // inputStyle={{ backgroundColor: 'white' }}
-          containerStyle={{ backgroundColor: 'white', borderWidth: 1, borderRadius: 2 }}
+          containerStyle={{ backgroundColor: colors.light, borderWidth: 1, borderRadius: 2 }}
           placeholderTextColor={'white'}
           searchIcon={{ size: 24 }}
           onChangeText={(text) => searchFilterFunction(text)}
@@ -158,7 +160,7 @@ const searchFilterFunction = (text) => {
           round
            lightTheme
          // inputStyle={{ backgroundColor: 'white' }}
-          containerStyle={{ backgroundColor: 'white', borderWidth: 1, borderRadius: 2 }}
+          containerStyle={{ backgroundColor: colors.light, borderWidth: 1, borderRadius: 2 }}
           placeholderTextColor={'white'}
           searchIcon={{ size: 24 }}
           onChangeText={(text) => searchFilterFunction2(text)}
@@ -167,7 +169,7 @@ const searchFilterFunction = (text) => {
           value={search2}
         />
       </View>
-      {/* <SearchBar/> */}
+     
       <FlatList
 
         data={filteredDataSource2}
