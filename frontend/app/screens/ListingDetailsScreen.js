@@ -5,9 +5,9 @@ import {
   KeyboardAvoidingView,
   Platform,
   Keyboard,
-  ScrollView,
-  Image
+  ScrollView,Image
 } from "react-native";
+import { Image as Image2}  from "react-native-expo-image-cache";
 
 import Button from "../components/Button"
 import colors from "../config/colors";
@@ -37,15 +37,15 @@ function ListingDetailsScreen({ route }) {
       behavior="position"
       keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 100}
     >
-      <Image
+      <Image2
        style={styles.image}
-       preview={require('../assets/rating.png')} 
+       //preview={require('../assets/rating.png')} 
         tint="dark"
         uri={listing.image}
       />
       <View style={styles.detailsContainer}>
         
-        
+        {/* <Text>{listing.image}</Text> */}
         <View style={{flexDirection:'row', flexWrap:'wrap',justifyContent: 'space-between'}}>
           
           <Text style={styles.title}>{listing.title}</Text>
@@ -77,6 +77,7 @@ function ListingDetailsScreen({ route }) {
       <ContactSellerForm contact={listing.contact} />
       </View>
      <View style={styles.rat}>
+       
      <Image source={require('../assets/rating.png')} 
   style={{ width: 200, height: 200 ,alignItems:"center"}}
   />
