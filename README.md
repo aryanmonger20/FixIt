@@ -7,8 +7,7 @@
 ### Our moto is to deliver best service in your nearby areas  by seeing their rating and review 
 #### Any valid user can login in their app and they can add some known working professionals in their list,and they will appeae in the app.
 ### WELCOME PAGE :-
-![REGISTER|512x397,20%](https://user-images.githubusercontent.com/57488430/113031819-c6c2f500-91ac-11eb-9b13-a44b722db9f6.jpeg)
-
+<img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REGISTER.jpeg" width="300" height="650">
 ### REGISTRATION AND LOGIN PAGE :-
 
 <table>
@@ -26,15 +25,27 @@
 #### Consumer can make contact with him or do whatsapp him and tell him what they require from him
 #### WORKING OF PROJECT:-
 ###### The working of this aap is very easy and It is also very easy for Any consumer to make contacts with working professionals and get their services at home in very less amount without any problem!
-![REGISTERPEIOPLE](https://user-images.githubusercontent.com/57488430/113032790-df7fda80-91ad-11eb-8355-4fc905fb333a.jpeg)
+<table>
+  <tr>
+    <td>Register Here</td>
+     <td>Contact Details</td>
+    <td>Listing Screen</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REGISTERPEIOPLE.jpeg" width=300 height=650></td>
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/CONTACT.jpeg" width=300 height=650></td> 
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/listings.jpeg" width=300 height=650></td>
+    
+    
+  </tr>
+ </table>
 
-![CONTACT](https://user-images.githubusercontent.com/57488430/113032827-edcdf680-91ad-11eb-89ab-65915b373e59.jpeg)
+
 
 ##### It will help consumer to directly contact the person with their own , it will be easy for consumers to contact for their service and it will also help for worker to get their work and make their economic growth.
 ### RATING 
 AFTER SEEING RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
-
-![RATING](https://user-images.githubusercontent.com/57488430/113032989-1f46c200-91ae-11eb-9f7a-7dfc748c171f.jpeg)
+<img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/RATING.jpeg" width="300" height="650"/>
 
 
 
