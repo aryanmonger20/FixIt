@@ -45,6 +45,8 @@
 ##### It will help consumer to directly contact the person with their own , it will be easy for consumers to contact for their service and it will also help for worker to get their work and make their economic growth.
 ### RATING 
 AFTER SEEING RATING WE CAN CHOOSE BEST WORKING PROESSIONALS FOR OUR REQUIREMENT
+
+
 <img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/RATING.jpeg" width="300" height="650"/>
 
 
