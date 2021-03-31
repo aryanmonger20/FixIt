@@ -32,9 +32,9 @@
     <td>Listing Screen</td>
   </tr>
   <tr>
-    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REGISTERPEIOPLE.jpeg" width=300 height=650></td>
-    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/CONTACT.jpeg" width=300 height=650></td> 
-    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/listings.jpeg" width=300 height=650></td>
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REGISTERPEIOPLE.jpeg" width=300 height=620></td>
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/CONTACT.jpeg" width=300 height=620></td> 
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/listings.jpeg" width=300 height=620></td>
     
     
   </tr>
