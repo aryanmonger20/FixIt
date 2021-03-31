@@ -42,7 +42,7 @@ const FeedNavigator =(navigation) => {
 	// 		console.log(addressComponent);
 	// 	})
 	// 	.catch(error => console.warn(error));
-  var url='https://reverse.geocoder.ls.hereapi.com/6.2/reversegeocode.json?prox='+array[0]+'%2C'+array[1]+'&mode=retrieveAddresses&maxresults=1&gen=9&apiKey=h3zNh8NS55Qi1JtJZRtCuaBRC4SaZvlmpbMcdqi8djU';
+ var url='https://maps.googleapis.com/maps/api/geocode/json?latlng='+array[0]+','+array[1]+'&key=AIzaSyBYDY2-tBAQr301NCKR_UE8E6hamyN8GdM';
   console.log(url);
   fetch(url)
   .then((response) => response.json())
