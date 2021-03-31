@@ -8,8 +8,8 @@
 #### Any valid user can login in their app and they can add some known working professionals in their list,and they will appeae in the app.
 ### WELCOME PAGE :-
 <img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REGISTER.jpeg" width="300" height="650">
-### REGISTRATION AND LOGIN PAGE :-
 
+### REGISTRATION AND LOGIN PAGE :-
 <table>
   <tr>
     <td>Registration Page</td>
