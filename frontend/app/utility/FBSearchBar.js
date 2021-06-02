@@ -14,12 +14,9 @@ import {
   ScrollView,
 } from 'react-native'
 
-// Import react-native-vector-icons
-// from "https://github.com/oblador/react-native-vector-icons"
+
 import Icon from 'react-native-vector-icons/FontAwesome5'
 
-// Import react-native-reanimated
-// from "https://github.com/software-mansion/react-native-reanimated"
 import Animated, { Easing } from 'react-native-reanimated'
 const { Value, timing } = Animated
 
@@ -49,8 +46,7 @@ class FBSearchBar extends React.Component {
   _onFocus = () => {
     // update state
     this.setState({isFocused: true})
-    // animation config
-    // input box
+  
     const input_box_translate_x_config = {
       duration: 200,
       toValue: 0,
