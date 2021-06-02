@@ -12,10 +12,7 @@ import routes from "../navigation/routes";
 import Screen from "../components/Screen";
 import AppText from "../components/Text";
 import useApi from "../hooks/useApi";
-import filter from 'lodash.filter';
-import useAuth from "../auth/useAuth"
-import FBSearchBar from "../utility/FBSearchBar";
-import RNPickerSelect from "react-native-picker-select";
+
 
 
 
@@ -60,9 +57,7 @@ function ListingsScreen({ navigation ,useAuth}) {
 const searchFilterFunction = (text) => {
 
     if (text) {
-      // Inserted text is not blank
-      // Filter the masterDataSource
-      // Update FilteredDataSource
+    
       const newData = masterDataSource.filter(function (item) {
         const itemData = item.city
           ? item.city.toUpperCase()
@@ -75,8 +70,8 @@ const searchFilterFunction = (text) => {
       setFilteredDataSource2(newData);
       setMasterDataSource2(newData);
     } else {
-      // Inserted text is blank
-      // Update FilteredDataSource with masterDataSource
+
+      
       setFilteredDataSource(masterDataSource);
       setFilteredDataSource2(masterDataSource);
       setMasterDataSource2(masterDataSource);

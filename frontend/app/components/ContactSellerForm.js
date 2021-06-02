@@ -11,6 +11,7 @@ export default function App(cont) {
  const cellNumber=cont.contact;
 //console.log(cellNumber)
   //const [cellNumber, setCellNumber] = useState('');
+  
   const handleSubmit = async ({ message }, { resetForm }) => {
     Keyboard.dismiss();
   }

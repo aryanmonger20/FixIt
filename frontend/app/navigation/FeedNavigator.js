@@ -16,8 +16,7 @@ import colors from "../config/colors"
 import { EvilIcons } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons'; 
 
-// Initialize the module (needs to be done only once)
-// use a valid API key
+
 
 
 const Stack = createStackNavigator();
@@ -57,7 +56,7 @@ const FeedNavigator =(navigation) => {
   )
   
   }
-  //onsole.log(array)
+ 
   return(
     
   <Stack.Navigator mode="modal">
@@ -78,11 +77,7 @@ const FeedNavigator =(navigation) => {
           shadowColor:"transparent"
          
         },
-        // headerTintColor: '#fff',
-        // headerTitleStyle: {
-        //   fontStyle: 'italic',
-        //   fontSize:18,
-        // },
+        
         headerRight: () => (
           <Text style={styles.headertitle2}><MaterialCommunityIcons name="map-marker-radius-outline" style={styles.headericon}/> {City}
             </Text>

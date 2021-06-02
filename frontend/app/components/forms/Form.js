@@ -17,10 +17,3 @@ function AppForm({ initialValues, onSubmit, validationSchema, children }) {
 
 export default AppForm;
 
-// const styles = StyleSheet.create({
-//   field:{
-//     elevation:10,
-//     borderRadius:6,
-//     borderColor:"#acacda"
-//   }
-// });

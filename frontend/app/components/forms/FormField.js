@@ -31,10 +31,3 @@ function AppFormField({ name, width, ...otherProps }) {
 
 export default AppFormField;
 
-// const styles = StyleSheet.create({
-//   field:{
-//     //elevation:10,
-//     width:150,
-//     height:40
-//   }
-// });

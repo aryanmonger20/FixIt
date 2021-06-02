@@ -41,8 +41,7 @@ app.use(express.json());
 app.use(cors());
 
 const client = require("mongodb").MongoClient;
-const url =
-  "mongodb+srv://Aryan:mohit2009@cluster0.mwbgn.mongodb.net/myFirstDatabase?retryWrites=true&w=majority";
+const url ="  ";
 
 mongoose.connect(
   url,
