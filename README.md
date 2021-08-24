@@ -2,6 +2,7 @@
 ### We all know that it is very irritating or sometimes very difficult for us to find a plumber or a electrician or a maid or many more working professionals  on time in our nearby areas.To resolve this problem  we are representing our App Fixit.
 
 ---
+### DEMO Video --> : [FIXIT](https://youtu.be/XP8gHlyZWls)
 ### Project for [DSC Solution Challenge 2021](https://developers.google.com/community/dsc-solution-challenge "DSC Solution Challange 2021")
 #### By Team WHAT_THE_BUG
 ### Our moto is to deliver best service in your nearby areas  by seeing their rating and review 
@@ -119,7 +120,7 @@ cd backend
 npm install nodemon
 npm index.js
 ```
-### YOUTUBE VIDEO CLICK HERE --> : [FIXIT](https://youtu.be/XP8gHlyZWls)
+
 
 ## Contributing to the project:
 Pull requests / bug reports are welcome :)
