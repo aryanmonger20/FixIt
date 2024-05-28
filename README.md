@@ -8,7 +8,18 @@
 ### Our moto is to deliver best service in your nearby areas  by seeing their rating and review 
 #### Any valid user can login in their app and they can add some known working professionals in their list,and they will appeae in the app.
 ### WELCOME PAGE :-
-<img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REGISTER.jpeg" width="300" height="650">
+
+<table>
+  <tr>
+    <td>Front Page</td>
+     <td>Login Page</td>
+  </tr>
+  <tr>
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/REGISTER.jpeg" width="300" height="650">
+</td>
+    <td><img src="https://github.com/aryanmonger20/FixIt/blob/master/frontend/app/assets/LOGIN.jpeg" width=300 height=650></td> 
+  </tr>
+ </table>
 
 ### REGISTRATION AND LOGIN PAGE :-
 <table>
